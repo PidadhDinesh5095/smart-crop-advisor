@@ -26,7 +26,7 @@ const Navigation = () => {
     { name: t('nav.diseaseDetection'), href: "/disease" },
     { name: t('nav.fertilizerPlans'), href: "/fertilizer" },
     { name: t('nav.weather'), href: "/weather" },
-    { name: t('nav.marketPrices'), href: "/market" },
+    
     { name: t('nav.projects'), href: "/projects" },
   ];
 

@@ -49,14 +49,7 @@ const Index = () => {
       icon: <CloudRain className="h-6 w-6 text-accent" />,
       color: "accent" as const
     },
-    {
-      title: t('feature.marketPrices.title'),
-      description: t('feature.marketPrices.description'),
-      image: marketImage,
-      href: "/market",
-      icon: <TrendingUp className="h-6 w-6 text-warning" />,
-      color: "primary" as const
-    },
+   
     {
       title: t('feature.projects.title'),
       description: t('feature.projects.description'),

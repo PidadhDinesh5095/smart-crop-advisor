@@ -2,8 +2,11 @@
 import pkg from '@google/genai';
 const { GoogleGenerativeAI } = pkg;
 import axios from 'axios';
+import dotenv from 'dotenv';
+dotenv.config();
 
-const apiKey = "AIzaSyB1zpNNZtTS-zqxaFw1M6x7PCYeRkc105I";
+const apiKey = process.env.GEMINI_API_KEY;
+console.log("GEMINI_API_KEY loaded:", apiKey);
 if (!apiKey) throw new Error('GEMINI_API_KEY not set');
 
 function ensureLang(lang) {

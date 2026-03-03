@@ -9,7 +9,8 @@ import { Separator } from "@/components/ui/separator";
 import { Link } from "react-router-dom";
 import VoiceButton from "@/components/VoiceButton";
 import { toast } from "@/components/ui/use-toast"; // adjust import if needed
-const url = import.meta.env.BACKEND_URL || "http://localhost:4000";
+const url = import.meta.env.VITE_BACKEND_URL;
+
 const Login = () => {
   const { t, setLanguage } = useLanguage();
   const [formData, setFormData] = useState({

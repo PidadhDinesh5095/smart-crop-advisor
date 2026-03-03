@@ -16,7 +16,7 @@ const DiseaseDetection = () => {
   const [detection, setDetection] = useState<any>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [fileToSend, setFileToSend] = useState<File | null>(null);
-  const url=import.meta.env.BACKEND_URL || "http://localhost:4000";
+  const url = import.meta.env.VITE_BACKEND_URL;
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];

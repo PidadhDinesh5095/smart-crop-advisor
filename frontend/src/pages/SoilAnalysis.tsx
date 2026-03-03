@@ -10,7 +10,7 @@ import { toast } from "@/components/ui/use-toast"; // adjust import if needed
 
 const SoilAnalysis = () => {
   const { t } = useLanguage();
-  const url = import.meta.env.BACKEND_URL || "http://localhost:4000";
+  const url = import.meta.env.VITE_BACKEND_URL;
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [fileToSend, setFileToSend] = useState<File | null>(null);
   const [analysis, setAnalysis] = useState<any>(null);

@@ -11,6 +11,7 @@ const Weather = () => {
   const { t } = useLanguage(); // add hook
   const [loading, setLoading] = useState(true);
   const [weatherData, setWeatherData] = useState<any>(null);
+  const apikey = import.meta.env.VITE_GEMINI_API_KEY;
 
   useEffect(() => {
     const fetchGeminiWeather = async (lat?: number, lng?: number) => {
@@ -33,7 +34,7 @@ Current Date: "${todayStr}"
 
         // Call Gemini 2.0 Flash API directly
         const geminiRes = await fetch(
-          "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=AIzaSyAtWVmkc7b08-o2JBlPTzJkVrbZA3ryf9E",
+          `https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=${apikey}`,
           {
             method: "POST",
             headers: {

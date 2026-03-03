@@ -14,7 +14,7 @@ import LanguagePopup from "@/components/LanguagePopup";
 import { toast } from "@/components/ui/use-toast"; // adjust import if your toast location is different
 
 const Signup = () => {
-  const url = import.meta.env.BACKEND_URL || "http://localhost:4000";
+  const url = import.meta.env.VITE_BACKEND_URL;
   const { t, setLanguage } = useLanguage();
   const [showLanguagePopup, setShowLanguagePopup] = useState(true);
   const [loading, setLoading] = useState(false);
