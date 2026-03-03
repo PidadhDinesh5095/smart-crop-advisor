@@ -81,7 +81,7 @@ export async function login(req, res) {
         id: user._id,
         name: user.name,
         mobile: user.mobile,
-        preferences: user.preferences,
+        language: user.preferences.language,
         farmerType: user.farmerType,
         location: user.location,
         age: user.age

@@ -17,6 +17,7 @@ const FertilizerPlans = () => {
   const [plan, setPlan] = useState<any>(null);
   const [completedTasks, setCompletedTasks] = useState<number[]>([]);
   const [loading, setLoading] = useState(false);
+  const url = import.meta.env.BACKEND_URL || "http://localhost:4000";
 
   // Sort crops and growthStages in ascending order
   const crops = [
@@ -62,7 +63,7 @@ const FertilizerPlans = () => {
         let data = null;
         while (!data) {
           const response = await fetch(
-            "https://scas-5do2.onrender.com/disease/plan",
+            `${url}/disease/plan`,
             {
               method: "POST",
               headers: {

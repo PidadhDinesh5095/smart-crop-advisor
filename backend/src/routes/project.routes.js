@@ -6,8 +6,8 @@ import User from '../models/User.js';
 
 const router = Router();
 
-const GEMINI_API_KEY = 'AIzaSyBIsiLsq9A6PRySUhJwbMPtyXLTaVpoJig';
-const GEMINI_MODEL = "gemini-2.0-flash";
+const GEMINI_API_KEY = 'AIzaSyB1zpNNZtTS-zqxaFw1M6x7PCYeRkc105I';
+const GEMINI_MODEL = "gemini-2.5-flash";
 
 // Helper to call Gemini for project plan
 async function generateProjectPlan(report, language ) {

@@ -10,6 +10,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { toast } from "sonner";
+import { set } from "date-fns";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +18,7 @@ const Navigation = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { t, currentLanguage, setLanguage, getCurrentLanguage } = useLanguage();
+  const url=import.meta.env.BACKEND_URL || "http://localhost:4000";
 
   const navItems = [
     { name: t('nav.home'), href: "/" },
@@ -28,9 +30,7 @@ const Navigation = () => {
     { name: t('nav.projects'), href: "/projects" },
   ];
 
-  const handleLanguageChange = (languageCode: string) => {
-    setLanguage(languageCode as any);
-  };
+  // Language selection removed; default is Hindi
 
   useEffect(() => {
     setIsLoggedIn(!!localStorage.getItem("token"));
@@ -39,7 +39,7 @@ const Navigation = () => {
   const handleLogout = async () => {
     const token = localStorage.getItem("token");
     try {
-      await fetch("http://localhost:4000/auth/logout", {
+      await fetch(`${url}/auth/logout`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -51,6 +51,7 @@ const Navigation = () => {
       toast.error(err.message || "logoutfailed");
     } 
     localStorage.removeItem("token");
+    setLanguage('hi'); // Reset to default language on logout
     setIsLoggedIn(false);
     navigate("/login");
   };
@@ -64,7 +65,7 @@ const Navigation = () => {
             <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
               <span className="text-white font-bold text-lg">🌾</span>
             </div>
-            <span className="text-xl font-bold text-primary">{t('nav.home') === 'Home' ? 'Smart Crop Advisor' :'స్మార్ట్ ఫసల్ సలహాదారు'  }</span>
+            <span className="text-xl font-bold text-primary">{t('nav.title')  }</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -84,35 +85,17 @@ const Navigation = () => {
             ))}
           </div>
 
-          {/* Voice & Language Controls */}
+          {/* Voice Controls & Language Toggle (only for not logged in) */}
           <div className="hidden md:flex items-center space-x-3">
-            
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="outline" size="sm">
-                  <Globe className="h-4 w-4" />
-                  {getCurrentLanguage().nativeName}
-                  <ChevronDown className="h-3 w-3" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-background border border-border shadow-large z-50 min-w-[200px]">
-                {languages.map((lang) => (
-                  <DropdownMenuItem 
-                    key={lang.code}
-                    onClick={() => handleLanguageChange(lang.code)}
-                    className="cursor-pointer hover:bg-accent/50 focus:bg-accent/50"
-                  >
-                    <div className="flex flex-col">
-                      <span className="font-medium">{lang.nativeName}</span>
-                      <span className="text-xs text-muted-foreground">{lang.name}</span>
-                    </div>
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-
             {!isLoggedIn && (
               <>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => setLanguage(currentLanguage === 'hi' ? 'en' : 'hi')}
+                >
+                  {currentLanguage === 'hi' ? 'Switch to English' : 'हिंदी में बदलें'}
+                </Button>
                 <Button onClick={() => navigate('/login')} variant="outline" size="sm">
                   <User className="h-4 w-4" />
                   {t('nav.login')}
@@ -162,12 +145,16 @@ const Navigation = () => {
                 <Mic className="h-4 w-4" />
                 {t('nav.voice')}
               </Button>
-              <Button variant="outline" className="w-full" size="sm">
-                <Globe className="h-4 w-4" />
-                {getCurrentLanguage().nativeName}
-              </Button>
               {!isLoggedIn && (
                 <>
+                  <Button
+                    variant="outline"
+                    className="w-full"
+                    size="sm"
+                    onClick={() => setLanguage(currentLanguage === 'hi' ? 'en' : 'hi')}
+                  >
+                    {currentLanguage === 'hi' ? 'Switch to English' : 'हिंदी में बदलें'}
+                  </Button>
                   <Button onClick={() => navigate('/login')} variant="outline" className="w-full" size="sm">
                     <User className="h-4 w-4" />
                     {t('nav.login')}

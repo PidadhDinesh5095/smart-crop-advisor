@@ -14,8 +14,10 @@ import LanguagePopup from "@/components/LanguagePopup";
 import { toast } from "@/components/ui/use-toast"; // adjust import if your toast location is different
 
 const Signup = () => {
+  const url = import.meta.env.BACKEND_URL || "http://localhost:4000";
   const { t, setLanguage } = useLanguage();
   const [showLanguagePopup, setShowLanguagePopup] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     mobile: "",
@@ -36,6 +38,7 @@ const Signup = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
     if (formData.password !== formData.confirmPassword) {
       toast({
         variant: "destructive",
@@ -43,14 +46,15 @@ const Signup = () => {
       });
       return;
     }
+    setLoading(true);
     try {
-      const response = await fetch("https://scas-5do2.onrender.com/auth/register", {
+      const response = await fetch(`${url}/auth/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
       const data = await response.json();
-      console.log(data);
+      
       if (!response.ok) {
         toast({
           variant: "destructive",
@@ -58,7 +62,7 @@ const Signup = () => {
         });
         return;
       }
-
+      setLoading(false);
       toast({
         title: t("auth.signupSuccess") || "Signup successful!",
         description: "Signup successful",
@@ -275,7 +279,18 @@ const Signup = () => {
                 </div>
 
                 <Button type="submit" className="w-full" variant="hero">
-                  {t("auth.signup")}
+                  {loading ? (
+                  <span className="flex items-center justify-center">
+                    <svg className="animate-spin h-5 w-5 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+                    </svg>
+                    
+                  </span>
+                ) : (
+                  t("auth.register")
+                )}
+                  
                 </Button>
               </form>
 

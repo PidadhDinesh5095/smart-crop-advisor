@@ -9,19 +9,21 @@ import { Separator } from "@/components/ui/separator";
 import { Link } from "react-router-dom";
 import VoiceButton from "@/components/VoiceButton";
 import { toast } from "@/components/ui/use-toast"; // adjust import if needed
-
+const url = import.meta.env.BACKEND_URL || "http://localhost:4000";
 const Login = () => {
-  const { t } = useLanguage();
+  const { t, setLanguage } = useLanguage();
   const [formData, setFormData] = useState({
     mobile: "",
     password: ""
   });
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
     try {
       console.log(formData);
-      const response = await fetch("https://scas-5do2.onrender.com/auth/login", {
+      const response = await fetch(`${url}/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -33,6 +35,7 @@ const Login = () => {
           variant: "destructive",
           title: data.error || "Login failed",
         });
+        setLoading(false);
         return;
       }
 
@@ -41,24 +44,32 @@ const Login = () => {
           variant: "destructive",
           title: "No token received from server",
         });
+        setLoading(false);
         return;
+      }
+
+      // Set language to user preferred language if available
+      if (data.user && data.user.language) {
+        localStorage.setItem("selectedLanguage", data.user.language);
+        setLanguage(data.user.language);
       }
 
       localStorage.setItem("token", data.token);
       toast({
-          title: t("auth.signupSuccess") || "login successful!",
-          description: "login successful",
-          className: "bg-green-500 text-white",
-        });
-        setTimeout(() => {
-      window.location.href = "/"; // Redirect to home or dashboard
-        },1500);
-      //dinesh
+        title: t("auth.loginSuccess") || "login successful!",
+        description: "login successful",
+        className: "bg-green-500 text-white",
+      });
+      setTimeout(() => {
+        window.location.href = "/"; // Redirect to home or dashboard
+      }, 1500);
     } catch (err: any) {
       toast({
         variant: "destructive",
         title: err.message || "Network error",
       });
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -106,7 +117,17 @@ const Login = () => {
               </div>
 
               <Button type="submit" className="w-full" variant="hero">
-                {t("auth.login")}
+                {loading ? (
+                  <span className="flex items-center justify-center">
+                    <svg className="animate-spin h-5 w-5 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+                    </svg>
+                    
+                  </span>
+                ) : (
+                  t("auth.login")
+                )}
               </Button>
             </form>
 

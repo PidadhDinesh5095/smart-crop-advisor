@@ -11,13 +11,14 @@ const Projects = () => {
   const [projects, setProjects] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
+  const url = import.meta.env.BACKEND_URL || "http://localhost:4000";
 
   useEffect(() => {
     const fetchProjects = async () => {
       setLoading(true);
       try {
         const token = localStorage.getItem("token");
-        const res = await fetch("https://scas-5do2.onrender.com/project/", {
+        const res = await fetch(`${url}/project/`, {
           headers: { Authorization: `Bearer ${token || ""}` }
         });
         const data = await res.json();

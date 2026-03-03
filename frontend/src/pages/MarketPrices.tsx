@@ -8,8 +8,8 @@ import { TrendingUp, TrendingDown, DollarSign, Calendar, MapPin, Bell, Loader2 }
 import marketImage from "@/assets/market-prices.jpg";
 import { useLanguage } from "@/contexts/LanguageContext"; // add import
 
-const GEMINI_API_KEY = "AIzaSyAFGuFVnPR5FUFEYardOPZIPtf6X5HttOw"; 
-const GEMINI_MODEL = "gemini-2.0-flash"; 
+const GEMINI_API_KEY = "AIzaSyAtWVmkc7b08-o2JBlPTzJkVrbZA3ryf9E"; 
+const GEMINI_MODEL = "gemini-2.5-flash"; 
 
 const callGemini = async (prompt: string, language: string) => {
   // Add language preference to the prompt
@@ -23,6 +23,7 @@ const callGemini = async (prompt: string, language: string) => {
       contents: [{ parts: [{ text: langPrompt }] }]
     }),
   });
+  console.log("Gemini API response status:", res);
   if (!res.ok) throw new Error("Gemini API error");
   const data = await res.json();
   try {

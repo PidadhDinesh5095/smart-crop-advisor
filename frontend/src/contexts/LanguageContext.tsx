@@ -45,13 +45,16 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const [currentLanguage, setCurrentLanguage] = useState<LanguageCode>('en');
+  const [currentLanguage, setCurrentLanguage] = useState<LanguageCode>('hi');
 
   // Load saved language from localStorage
   useEffect(() => {
     const savedLanguage = localStorage.getItem('selectedLanguage') as LanguageCode;
     if (savedLanguage && languages.some(lang => lang.code === savedLanguage)) {
       setCurrentLanguage(savedLanguage);
+    } else {
+      setCurrentLanguage('hi'); // Default to Hindi
+      localStorage.setItem('selectedLanguage', 'hi');
     }
   }, []);
 
@@ -97,8 +100,9 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
     'nav.projects': 'Projects',
     'nav.voice': 'Voice',
     'nav.login': 'Login',
-    'nav.register': 'Resister',
+    'nav.register': 'Register',
     'nav.logout':'Logout',
+    'nav.title': 'Smart Crop Advisor',
     
   // MarketPrices.tsx
   'market.title': 'Market Prices',
@@ -195,6 +199,7 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
     'soil.generateReport': 'Generate Report',
     'soil.noFile': 'Please upload a soil report first',
     'soil.analyzing': 'Analyzing your soil report...',
+    'soil.uploadPrompt': 'Upload PDF, image, or document containing your soil test results',
     
     // Disease Detection Page
     'disease.title': 'Crop Disease Detection',
@@ -280,6 +285,7 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
     'auth.farmerType.marginal': 'Marginal Farmer',
     'auth.farmerType.business': 'Business Farmer',
      'auth.preferredLanguage':'Select Language',
+     'auth.loggingIn': 'Logging in...',
 
 'fertilizer.generatePlan': 'Generate Fertilizer Plan',
 'fertilizer.generatePlanDesc': 'Select your crop and current growth stage to get customized recommendations',
@@ -374,15 +380,18 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
   
   hi: {
     // Navigation
-    'nav.home': 'होम',
-    'nav.soilAnalysis': 'मिट्टी विश्लेषण',
-    'nav.diseaseDetection': 'रोग की पहचान',
-    'nav.fertilizerPlans': 'उर्वरक योजना',
-    'nav.weather': 'मौसम',
-    'nav.marketPrices': 'बाजार भाव',
-    'nav.projects': 'परियोजनाएं',
-    'nav.voice': 'आवाज़',
-    'nav.login': 'लॉगिन',
+     'nav.home': 'होम',
+  'nav.soilAnalysis': 'मिट्टी विश्लेषण',
+  'nav.diseaseDetection': 'रोग पहचान',
+  'nav.fertilizerPlans': 'उर्वरक योजनाएँ',
+  'nav.weather': 'मौसम',
+  'nav.marketPrices': 'बाजार मूल्य',
+  'nav.projects': 'परियोजनाएँ',
+  'nav.voice': 'आवाज़',
+  'nav.login': 'लॉगिन',
+  'nav.register': 'रजिस्टर',
+  'nav.title': 'स्मार्ट फसल सलाहकार',
+  
     
   "weather.currentWeather": "वर्तमान मौसम",
   "weather.loadingLocation": "लोड हो रहा है ...",
@@ -545,6 +554,7 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
     'auth.farmerType.small': 'छोटा किसान',
     'auth.farmerType.marginal': 'सीमांत किसान',
     'auth.farmerType.business': 'व्यापारिक किसान',
+    'auth.loggingIn': 'लॉगिन हो रहा है...',
     
 'fertilizer.generatePlan': 'उर्वरक योजना बनाएं',
 'fertilizer.generatePlanDesc': 'कस्टम अनुशंसाएँ प्राप्त करने के लिए अपनी फसल और वर्तमान वृद्धि अवस्था चुनें',
@@ -642,16 +652,19 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
   
   bn: {
     // Navigation
-    'nav.home': 'হোম',
-    'nav.soilAnalysis': 'মাটি বিশ্লেষণ',
-    'nav.diseaseDetection': 'রোগ শনাক্তকরণ',
-    'nav.fertilizerPlans': 'সার পরিকল্পনা',
-    'nav.weather': 'আবহাওয়া',
-    'nav.marketPrices': 'বাজার দর',
-    'nav.projects': 'প্রকল্প',
-    'nav.voice': 'ভয়েস',
-    'nav.login': 'লগইন',
-
+    
+  'nav.home': 'হোম',
+  'nav.soilAnalysis': 'মাটির বিশ্লেষণ',
+  'nav.diseaseDetection': 'রোগ সনাক্তকরণ',
+  'nav.fertilizerPlans': 'সার পরিকল্পনা',
+  'nav.weather': 'আবহাওয়া',
+  'nav.marketPrices': 'বাজার মূল্য',
+  'nav.projects': 'প্রকল্পসমূহ',
+  'nav.voice': 'ভয়েস',
+  'nav.login': 'লগইন',
+  'nav.register': 'নিবন্ধন',
+  'nav.title': 'স্মার্ট ফসল পরামর্শদাতা',
+  
     
   "weather.currentWeather": "বর্তমান আবহাওয়া",
   "weather.loadingLocation": "লোড হচ্ছে ...",
@@ -811,6 +824,7 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
     'auth.farmerType.small': 'ছোট কৃষক',
     'auth.farmerType.marginal': 'সীমান্ত কৃষক',
     'auth.farmerType.business': 'ব্যবসায়ী কৃষক',
+    'auth.loggingIn': 'লগইন হচ্ছে...',
     'fertilizer.generatePlan': 'সার পরিকল্পনা তৈরি করুন',
 'fertilizer.generatePlanDesc': 'কাস্টম সুপারিশ পেতে আপনার ফসল এবং বর্তমান বৃদ্ধির স্তর নির্বাচন করুন',
 
@@ -907,6 +921,48 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
   
   te: {
     // Navigation
+    
+  'soil.title': 'మట్టి విశ్లేషణ మరియు సిఫారసులు',
+  'soil.subtitle': 'AI ఆధారిత విశ్లేషణ మరియు సిఫారసుల కోసం మీ మట్టి నివేదికను అప్లోడ్ చేయండి',
+  'soil.upload': 'మట్టి నివేదిక అప్లోడ్ చేయండి',
+  'soil.uploadedFile': 'అప్లోడ్ చేసిన ఫైల్',
+  'common.projectCreating': 'ప్రాజెక్ట్ సృష్టించబడుతోంది...',
+  'soil.analyze': 'AI తో విశ్లేషించండి',
+  'soil.soilType': 'మట్టి రకం',
+  'soil.recommendations': 'AI సిఫారసులు',
+  'soil.createProject': 'ప్రాజెక్ట్ సృష్టించండి',
+  'soil.generateReport': 'రిపోర్ట్ రూపొందించండి',
+  'soil.noFile': 'దయచేసి ముందుగా మట్టి నివేదిక అప్లోడ్ చేయండి',
+  'soil.analyzing': 'మీ మట్టి నివేదిక విశ్లేషణ జరుగుతోంది...',
+  'soil.uploadPrompt': 'మీ మట్టి పరీక్ష ఫలితాలు ఉన్న PDF, చిత్రం లేదా పత్రాన్ని అప్లోడ్ చేయండి',
+  'soil.reportSummary': 'మట్టి నివేదిక సారాంశం',
+  'soil.PH': 'పిహెచ్ స్థాయి',
+  'soil.organicMatter': 'సేంద్రియ పదార్థం',
+  'soil.moisture': 'తేమ',
+  'soil.nutrients': 'పోషకాలు',
+  'soil.heavyMetals': 'భారీ లోహాలు',
+  'soil.issues': 'సమస్యలు',
+  'soil.suitableCrops': 'అనుకూల పంటలు',
+  'soil.createproject': 'ప్రాజెక్ట్ సృష్టించండి',
+  'soil.aiAnalysis': 'AI ఆధారిత మట్టి విశ్లేషణ మరియు పంట సిఫారసులు',
+
+  'disease.title': 'ఇప్పటికే ఉన్న చిత్రాలను అప్లోడ్ చేయండి',
+  'disease.upload': 'చిత్రాన్ని అప్లోడ్ చేయండి',
+  'disease.guide': 'AI ఆధారిత వ్యాధి గుర్తింపు మరియు చికిత్స మార్గదర్శిని',
+  'disease.uploadSuccess': 'చిత్రం విజయవంతంగా అప్లోడ్ చేయబడింది',
+  'disease.analyze': 'AI తో విశ్లేషించండి',
+  
+  'disease.detectedIn': 'లో గుర్తించబడింది',
+  'disease.severity': 'తీవ్రత:',
+  'disease.confident': 'నమ్మక స్థాయి',
+  'disease.observedSymptoms': 'గమనించిన లక్షణాలు',
+  'disease.preventiveTips': 'నివారణ సూచనలు',
+  'disease.recommendedProducts': 'సిఫారసు చేసిన ఉత్పత్తులు',
+  'disease.nutrientRecommendations': 'పోషక సిఫారసులు',
+  'disease.pesticideRecommendations': 'పురుగుమందు సిఫారసులు',
+  'disease.expectedRecovery': 'అంచనా కోలిక',
+  'disease.treatmentReport': 'చికిత్స నివేదిక',
+  'disease.dosage': 'మోతాదు',
     'nav.home': 'హోమ్',
     'nav.soilAnalysis': 'మట్టి విశ్లేషణ',
     'nav.diseaseDetection': 'రోగ గుర్తింపు',
@@ -916,6 +972,7 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
     'nav.projects': 'ప్రాజెక్టులు',
     'nav.voice': 'వాయిస్',
     'nav.login': 'లాగిన్',
+    'nav.title': 'స్మార్ట్ పంట సలహాదారు',
 
     
   "weather.currentWeather": "ప్రస్తుత వాతావరణం",
@@ -984,20 +1041,12 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
     'stats.supportAvailable': 'సహాయం అందుబాటులో ఉంది',
     
     // Soil Analysis Page
-    'soil.title': 'మట్టి విశ్లేషణ & సిఫారసులు',
-    'soil.subtitle': 'AI ఆధారిత విశ్లేషణ మరియు సిఫారసుల కోసం మీ మట్టి నివేదికను అప్లోడ్ చేయండి',
-    'soil.upload': 'మట్టి నివేదికను అప్లోడ్ చేయండి',
-    'soil.analyze': 'AI తో విశ్లేషించండి',
-    'soil.recommendations': 'AI సిఫారసులు',
-    'soil.generateReport': 'రిపోర్ట్ రూపొందించండి',
-    'soil.noFile': 'దయచేసి ముందుగా ఒక మట్టి నివేదికను అప్లోడ్ చేయండి',
-    'soil.analyzing': 'మీ మట్టి నివేదికను విశ్లేషించడం జరుగుతోంది...',
+    
     
     // Disease Detection Page
-    'disease.title': 'క్రాప్ డిసీజ్ డిటెక్షన్',
+    
     'disease.subtitle': 'తక్షణ AI నిర్ధారణ కోసం రోగగ్రస్త పంటల చిత్రాలను అప్లోడ్ చేయండి',
-    'disease.upload': 'క్రాప్ ఇమేజ్‌ను అప్లోడ్ చేయండి',
-    'disease.detect': 'రోగాన్ని గుర్తించండి',
+    
     'disease.diagnosis': 'రోగ నిర్ధారణ',
     'disease.treatment': 'చికిత్స సిఫారసులు',
     'disease.noImage': 'దయచేసి ముందుగా ఒక పంట చిత్రాన్ని అప్లోడ్ చేయండి',
@@ -1075,6 +1124,7 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
     'auth.farmerType.small': 'చిన్న రైతు',
     'auth.farmerType.marginal': 'సరిహద్దు రైతు',
     'auth.farmerType.business': 'వ్యాపార రైతు',
+    'auth.loggingIn': 'లాగిన్ అవుతోంది...',
     'fertilizer.generatePlan': 'ఎరువుల ప్రణాళిక రూపొందించండి',
 'fertilizer.generatePlanDesc': 'అనుకూల సిఫార్సులు పొందడానికి మీ పంట మరియు ప్రస్తుత వృద్ధి దశను ఎంచుకోండి',
 
@@ -1180,6 +1230,7 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
     'nav.projects': 'प्रकल्प',
     'nav.voice': 'आवाज',
     'nav.login': 'लॉगिन',
+    'nav.title': 'स्मार्ट पीक सल्लागार',
     
     
   "weather.currentWeather": "सध्याचे हवामान",
@@ -1337,6 +1388,7 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
     'auth.farmerType.small':  'लहान शेतकरी',
     'auth.farmerType.marginal': 'सीमांत शेतकरी',
     'auth.farmerType.business': 'व्यवसायिक शेतकरी',
+    'auth.loggingIn': 'लॉगिन होत आहे...',
     'fertilizer.generatePlan': 'खत योजना तयार करा',
 'fertilizer.generatePlanDesc': 'सानुकूल शिफारसी मिळवण्यासाठी तुमचे पीक आणि वर्तमान वाढीची अवस्था निवडा',
 
@@ -1442,6 +1494,7 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
     'nav.projects': 'திட்டங்கள்',
     'nav.voice': 'குரல்',
     'nav.login': 'உள்நுழைவு',
+    'nav.title': 'ஸ்மார்ட் பயிர் ஆலோசகர்',
 
     
   "weather.currentWeather": "தற்போதைய வானிலை",
@@ -1601,6 +1654,7 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
     'auth.farmerType.small': 'சிறு விவசாயி',
     'auth.farmerType.marginal': 'சரிவரிசை விவசாயி',
     'auth.farmerType.business': 'வணிக விவசாயி',
+    'auth.loggingIn': 'உள்நுழைகிறது...',
     'fertilizer.generatePlan': 'உர திட்டம் உருவாக்கு',
 'fertilizer.generatePlanDesc': 'தனிப்பயன் பரிந்துரைகளை பெற உங்கள் பயிர் மற்றும் தற்போதைய வளர்ச்சி நிலையைக் குறிப்பிடவும்',
 
@@ -1706,6 +1760,7 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
   'nav.projects': 'પ્રોજેક્ટ્સ',
   'nav.voice': 'અવાજ',
   'nav.login': 'લોગિન',
+  'nav.title': 'સ્માર્ટ પાક સલાહકાર',
 
   
   "weather.currentWeather": "વર્તમાન હવામાન",
@@ -1867,6 +1922,7 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
   'auth.farmerType.small': 'નાનો ખેડૂત',
   'auth.farmerType.marginal': 'સીમાંત ખેડૂત',
   'auth.farmerType.business': 'વ્યવસાયિક ખેડૂત',
+  'auth.loggingIn': 'લૉગિન થઈ રહ્યું છે...',
   'fertilizer.generatePlan': 'ખાતર યોજના બનાવો',
 'fertilizer.generatePlanDesc': 'કસ્ટમ ભલામણો મેળવવા માટે તમારી ખેતી અને વર્તમાન વૃદ્ધિનો તબક્કો પસંદ કરો',
 
@@ -1970,6 +2026,7 @@ kn: {
   'nav.projects': 'ಪ್ರಾಜೆಕ್ಟ್‌ಗಳು',
   'nav.voice': 'ಧ್ವನಿ',
   'nav.login': 'ಲಾಗಿನ್',
+  'nav.title': 'ಸ್ಮಾರ್ಟ್ ಬೆಳೆ ಸಲಹೆಗಾರ',
   
   "weather.currentWeather": "ಪ್ರಸ್ತುತ ಹವಾಮಾನ",
   "weather.loadingLocation": "ಲೋಡ್ ಆಗುತ್ತಿದೆ ...",
@@ -2130,6 +2187,7 @@ kn: {
   'auth.farmerType.small': 'ಚಿಕ್ಕ ರೈತ',
   'auth.farmerType.marginal': 'ಸೀಮಿತ ರೈತ',
   'auth.farmerType.business': 'ವ್ಯವಹಾರ ರೈತ',
+  'auth.loggingIn': 'ಲಾಗಿನ್ ಆಗುತ್ತಿದೆ...',
   'fertilizer.generatePlan': 'ರಸಗೊಬ್ಬರ ಯೋಜನೆ ತಯಾರಿಸಿ',
 'fertilizer.generatePlanDesc': 'ಕಸ್ಟಮ್ ಶಿಫಾರಸುಗಳನ್ನು ಪಡೆಯಲು ನಿಮ್ಮ ಬೆಳೆ ಮತ್ತು ಪ್ರಸ್ತುತ ಬೆಳವಣಿಗೆಯ ಹಂತವನ್ನು ಆಯ್ಕೆಮಾಡಿ',
 
@@ -2234,6 +2292,7 @@ ml: {
   'nav.projects': 'പ്രോജക്ടുകള്‍',
   'nav.voice': 'ശബ്ദം',
   'nav.login': 'ലോഗിന്‍',
+  'nav.title': 'ସ୍ମାର୍ଟ ଫସଲ ପରାମର୍ଶଦାତା',
 
   
   "weather.currentWeather": "നിലവിലെ കാലാവസ്ഥ",
@@ -2392,6 +2451,7 @@ ml: {
   'auth.farmerType.small': 'ചെറിയ കർഷകൻ',
   'auth.farmerType.marginal': 'അറ്റക്കാർഷകൻ',
   'auth.farmerType.business': 'വ്യവസായ കർഷകൻ',
+  'auth.loggingIn': 'ലോഗിൻ ചെയ്യുന്നു...',
   'fertilizer.generatePlan': 'വള പദ്ധതി തയ്യാറാക്കുക',
 'fertilizer.generatePlanDesc': 'ഇഷ്ടാനുസൃത ശുപാർശകൾ ലഭിക്കാൻ നിങ്ങളുടെ വിളയും നിലവിലെ വളർച്ചാ ഘട്ടവും തിരഞ്ഞെടുക്കുക',
 
@@ -2496,6 +2556,7 @@ or: {
   'nav.projects': 'ପ୍ରକଳ୍ପ',
   'nav.voice': 'ଶବ୍ଦ',
   'nav.login': 'ଲଗଇନ୍',
+  'nav.title': 'ସ୍ମାର୍ଟ ଫସଲ ସଲାହକାର',
   
   "weather.currentWeather": "ବର୍ତ୍ତମାନ ଆବହାୱା",
   "weather.loadingLocation": "ଲୋଡ୍ ହେଉଛି ...",
@@ -2652,6 +2713,7 @@ or: {
   'auth.farmerType.placeholder': 'କୃଷକ ପ୍ରକାର ଚୟନ କରନ୍ତୁ',
   'auth.farmerType.small': 'ଛୋଟ କୃଷକ',
   'auth.farmerType.marginal': 'ସୀମାନ୍ତ କୃଷକ',
+  'auth.loggingIn': 'ଲଗଇନ୍ ହେଉଛି...',
   'auth.farmerType.business': 'ବ୍ୟବସାୟୀ କୃଷକ',
   'fertilizer.generatePlan': 'ସରକରାଣୀ ପ୍ରୟୋଗ ଯୋଜନା ତିଆରି କରନ୍ତୁ',
 'fertilizer.generatePlanDesc': 'ବ୍ୟକ୍ତିଗତ ସୁପାରିଶ ପାଇବାକୁ ଆପଣଙ୍କର ଚାଷୀବାଳି ଏବଂ ବର୍ତ୍ତମାନର ବିକାଶ ଅବସ୍ଥା ଚୟନ କରନ୍ତୁ',
@@ -2916,6 +2978,7 @@ pa: {
   'auth.farmerType.small': 'ਛੋਟਾ ਕਿਸਾਨ',
   'auth.farmerType.marginal': 'ਸੀਮਾਂਤ ਕਿਸਾਨ',
   'auth.farmerType.business': 'ਵਪਾਰੀ ਕਿਸਾਨ',
+  'auth.loggingIn': 'ਲਾਗਇਨ ਹੋ ਰਿਹਾ ਹੈ...',
   'fertilizer.generatePlan': 'ਖਾਦ ਯੋਜਨਾ ਬਣਾਓ',
 'fertilizer.generatePlanDesc': 'ਨਿੱਜੀ ਸਿਫਾਰਸ਼ਾਂ ਲਈ ਆਪਣੀ ਫਸਲ ਅਤੇ ਮੌਜੂਦਾ ਵਾਧੇ ਦਾ ਪੜਾਅ ਚੁਣੋ',
 

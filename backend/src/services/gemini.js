@@ -3,7 +3,7 @@ import pkg from '@google/genai';
 const { GoogleGenerativeAI } = pkg;
 import axios from 'axios';
 
-const apiKey = "AIzaSyAFGuFVnPR5FUFEYardOPZIPtf6X5HttOw";
+const apiKey = "AIzaSyB1zpNNZtTS-zqxaFw1M6x7PCYeRkc105I";
 if (!apiKey) throw new Error('GEMINI_API_KEY not set');
 
 function ensureLang(lang) {
@@ -11,7 +11,7 @@ function ensureLang(lang) {
 }
 
 // Helper for Gemini API request
-async function geminiRequest({ prompt, model = "gemini-2.0-flash", temperature = 0.7, maxOutputTokens = 2000 }) {
+async function geminiRequest({ prompt, model = "gemini-2.5-flash", temperature = 0.7, maxOutputTokens = 10000 }) {
   const requestBody = {
     contents: [{
       role: "user",

@@ -222,7 +222,7 @@ const Index = () => {
             <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
               <span className="text-white font-bold">🌾</span>
             </div>
-            <span className="text-lg font-bold text-primary">Smart Crop Advisor</span>
+            <span className="text-lg font-bold text-primary">{t('home.title')}</span>
           </div>
           <p className="text-muted-foreground">
             Empowering farmers with AI technology for sustainable agriculture

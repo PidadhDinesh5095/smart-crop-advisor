@@ -10,6 +10,7 @@ import { toast } from "@/components/ui/use-toast"; // adjust import if needed
 
 const SoilAnalysis = () => {
   const { t } = useLanguage();
+  const url = import.meta.env.BACKEND_URL || "http://localhost:4000";
   const [uploadedFile, setUploadedFile] = useState<File | null>(null);
   const [fileToSend, setFileToSend] = useState<File | null>(null);
   const [analysis, setAnalysis] = useState<any>(null);
@@ -34,7 +35,7 @@ const SoilAnalysis = () => {
     const token = localStorage.getItem("token");
 
     try {
-      const response = await fetch("https://scas-5do2.onrender.com/soil/analyze", {
+      const response = await fetch(`${url}/soil/analyze`, {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token || ""}`,
@@ -81,7 +82,7 @@ const SoilAnalysis = () => {
                 {t('soil.upload')}
               </CardTitle>
               <CardDescription>
-                Upload PDF, image, or document containing your soil test results
+                {t('soil.title')}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
@@ -97,8 +98,8 @@ const SoilAnalysis = () => {
                   <div className="space-y-3">
                     <FileText className="h-12 w-12 text-muted-foreground mx-auto" />
                     <div>
-                      <p className="text-sm font-medium">Click to upload soil report</p>
-                      <p className="text-xs text-muted-foreground">PDF, JPG, PNG up to 10MB</p>
+                      <p className="text-sm font-medium">{t('soil.uploadPrompt')}</p>
+
                     </div>
                   </div>
                 </label>
@@ -106,9 +107,9 @@ const SoilAnalysis = () => {
 
               {uploadedFile && (
                 <div className="p-4 bg-secondary rounded-lg">
-                  <p className="text-sm font-medium">Uploaded: {uploadedFile.name}</p>
+                  <p className="text-sm font-medium">{t('soil.uploadedFile')} : {uploadedFile.name}</p>
                   <p className="text-xs text-muted-foreground">
-                    Size: {(uploadedFile.size / 1024 / 1024).toFixed(2)} MB
+
                   </p>
                   <Button
                     variant="success"
@@ -133,7 +134,7 @@ const SoilAnalysis = () => {
                 {t('soil.recommendations')}
               </CardTitle>
               <CardDescription>
-                AI-powered soil analysis and crop recommendations
+                {t('soil.aiAnalysis')}
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -141,7 +142,7 @@ const SoilAnalysis = () => {
                 <div className="text-center py-8">
                   <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
                   <p className="text-sm font-medium">{t('soil.analyzing')}</p>
-                  <p className="text-xs text-muted-foreground">This may take a few moments</p>
+                 
                 </div>
               ) : analysis && analysis.soilReport ? (
                 <>
@@ -168,7 +169,7 @@ const SoilAnalysis = () => {
                         <div className="font-medium">{analysis.soilReport.soilType}</div>
                       </div>
                       <div>
-                        <div className="text-xs text-muted-foreground">{t('soil.pH') || "pH"}</div>
+                        <div className="text-xs text-muted-foreground">{t('soil.PH') || "pH"}</div>
                         <div className="font-medium">{analysis.soilReport.pH}</div>
                       </div>
                       <div>
@@ -254,7 +255,7 @@ const SoilAnalysis = () => {
                           setIsCreatingProject(true);
                           const token = localStorage.getItem("token");
                           try {
-                            const res = await fetch("http://localhost:4000/project/create", {
+                            const res = await fetch(`${import.meta.env.BACKEND_URL}/project/create`, {
                               method: "POST",
                               headers: {
                                 "Content-Type": "application/json",
@@ -288,12 +289,15 @@ const SoilAnalysis = () => {
                         disabled={isCreatingProject}
                       >
                         {isCreatingProject ? (
-                          <span className="flex items-center gap-2">
-                            <span className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin"></span>
-                            Creating...
+                          <span className="flex items-center justify-center">
+                            <svg className="animate-spin h-5 w-5 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                              <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                              <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+                            </svg>
+                            {t('common.projectCreating') || "Creating project..."}
                           </span>
                         ) : (
-                          "Create Project"
+                          t('soil.createProject')
                         )}
                       </Button>
                     </div>

@@ -33,7 +33,7 @@ Current Date: "${todayStr}"
 
         // Call Gemini 2.0 Flash API directly
         const geminiRes = await fetch(
-          "https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=AIzaSyAFGuFVnPR5FUFEYardOPZIPtf6X5HttOw",
+          "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=AIzaSyAtWVmkc7b08-o2JBlPTzJkVrbZA3ryf9E",
           {
             method: "POST",
             headers: {
@@ -44,10 +44,11 @@ Current Date: "${todayStr}"
                 role: "user",
                 parts: [{ text: prompt }]
               }],
-              generationConfig: { temperature: 0.7, maxOutputTokens: 1024 }
+              generationConfig: { temperature: 0.7, maxOutputTokens: 3000 }
             })
           }
         );
+        console.log("Gemini API response status:", geminiRes);
         if (geminiRes.ok) {
           const geminiJson = await geminiRes.json();
           let text = geminiJson.candidates?.[0]?.content?.parts?.[0]?.text || "";
