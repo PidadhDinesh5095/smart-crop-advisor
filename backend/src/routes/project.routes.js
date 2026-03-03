@@ -3,10 +3,12 @@ import { authRequired } from '../middleware/auth.js';
 import Project from '../models/project.js';
 import fetch from "node-fetch"; // Ensure node-fetch is installed
 import User from '../models/User.js';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const router = Router();
 
-const GEMINI_API_KEY = 'AIzaSyB1zpNNZtTS-zqxaFw1M6x7PCYeRkc105I';
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 const GEMINI_MODEL = "gemini-2.5-flash";
 
 // Helper to call Gemini for project plan
