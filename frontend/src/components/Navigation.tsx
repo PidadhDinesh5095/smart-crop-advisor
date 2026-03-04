@@ -18,7 +18,7 @@ const Navigation = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { t, currentLanguage, setLanguage, getCurrentLanguage } = useLanguage();
-  const url=import.meta.env.BACKEND_URL || "http://localhost:4000";
+  const url=import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
 
   const navItems = [
     { name: t('nav.home'), href: "/" },
