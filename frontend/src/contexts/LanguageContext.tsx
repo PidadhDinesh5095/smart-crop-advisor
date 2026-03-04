@@ -91,6 +91,48 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
 export const translations: Record<LanguageCode, Record<string, string>> = {
   en: {
     // Navigation
+    
+  'soil.title': 'Soil Analysis and Recommendations',
+  'soil.subtitle': 'Upload your soil report for AI-powered analysis and recommendations',
+  'soil.upload': 'Upload Soil Report',
+  'soil.uploadedFile': 'Uploaded File',
+  'common.projectCreating': 'Creating project...',
+  'soil.analyze': 'Analyze with AI',
+  'soil.soilType': 'Soil Type',
+  'soil.recommendations': 'AI Recommendations',
+  'soil.createProject': 'Create Project',
+  'soil.generateReport': 'Generate Report',
+  'soil.noFile': 'Please upload a soil report first',
+  'soil.analyzing': 'Analyzing your soil report...',
+  'soil.uploadPrompt': 'Upload PDF, image, or document containing your soil test results',
+  'soil.reportSummary': 'Soil Report Summary',
+  'soil.PH': 'PH Level',
+  'soil.organicMatter': 'Organic Matter',
+  'soil.moisture': 'Moisture',
+  'soil.nutrients': 'Nutrients',
+  'soil.heavyMetals': 'Heavy Metals',
+  'soil.issues': 'Issues',
+  'soil.suitableCrops': 'Suitable Crops',
+  'soil.createproject': 'Create Project',
+  'soil.aiAnalysis': 'AI-powered soil analysis and crop recommendations',
+
+  'disease.title': 'Upload existing images',
+  'disease.upload': 'Upload Image',
+  'disease.guide': 'AI-powered disease identification and treatment guide',
+  'disease.uploadSuccess': 'Image uploaded successfully',
+  'disease.analyze': 'Analyze with AI',
+
+  'disease.detectedIn': 'Detected in',
+  'disease.severity': 'Severity:',
+  'disease.confident': 'Confidence Level',
+  'disease.observedSymptoms': 'Observed Symptoms',
+  'disease.preventiveTips': 'Preventive Tips',
+  'disease.recommendedProducts': 'Recommended Products',
+  'disease.nutrientRecommendations': 'Nutrient Recommendations',
+  'disease.pesticideRecommendations': 'Pesticide Recommendations',
+  'disease.expectedRecovery': 'Expected Recovery',
+  'disease.treatmentReport': 'Treatment Report',
+  'disease.dosage': 'Dosage',
     'nav.home': 'Home',
     'nav.soilAnalysis': 'Soil Analysis',
     'nav.diseaseDetection': 'Disease Detection',
@@ -191,20 +233,9 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
     'stats.supportAvailable': 'Support Available',
     
     // Soil Analysis Page
-    'soil.title': 'Soil Analysis & Recommendations',
-    'soil.subtitle': 'Upload your soil report for AI-powered analysis and recommendations',
-    'soil.upload': 'Upload Soil Report',
-    'soil.analyze': 'Analyze with AI',
-    'soil.recommendations': 'AI Recommendations',
-    'soil.generateReport': 'Generate Report',
-    'soil.noFile': 'Please upload a soil report first',
-    'soil.analyzing': 'Analyzing your soil report...',
-    'soil.uploadPrompt': 'Upload PDF, image, or document containing your soil test results',
     
-    // Disease Detection Page
-    'disease.title': 'Crop Disease Detection',
     'disease.subtitle': 'Upload images of diseased crops for instant AI diagnosis',
-    'disease.upload': 'Upload Crop Image',
+    
     'disease.detect': 'Detect Disease',
     'disease.diagnosis': 'Disease Diagnosis',
     'disease.treatment': 'Treatment Recommendations',
@@ -379,6 +410,48 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
   },
   
   hi: {
+    
+  'soil.title': 'মাটির বিশ্লেষণ ও সুপারিশ',
+  'soil.subtitle': 'AI ভিত্তিক বিশ্লেষণ ও সুপারিশের জন্য আপনার মাটির রিপোর্ট আপলোড করুন',
+  'soil.upload': 'মাটির রিপোর্ট আপলোড করুন',
+  'soil.uploadedFile': 'আপলোড করা ফাইল',
+  'common.projectCreating': 'প্রকল্প তৈরি করা হচ্ছে...',
+  'soil.analyze': 'AI দিয়ে বিশ্লেষণ করুন',
+  'soil.soilType': 'মাটির ধরন',
+  'soil.recommendations': 'AI সুপারিশ',
+  'soil.createProject': 'প্রকল্প তৈরি করুন',
+  'soil.generateReport': 'রিপোর্ট তৈরি করুন',
+  'soil.noFile': 'দয়া করে প্রথমে মাটির রিপোর্ট আপলোড করুন',
+  'soil.analyzing': 'আপনার মাটির রিপোর্ট বিশ্লেষণ করা হচ্ছে...',
+  'soil.uploadPrompt': 'আপনার মাটির পরীক্ষার ফলাফল সম্বলিত PDF, ছবি বা ডকুমেন্ট আপলোড করুন',
+  'soil.reportSummary': 'মাটির রিপোর্ট সারাংশ',
+  'soil.PH': 'পিএইচ স্তর',
+  'soil.organicMatter': 'জৈব পদার্থ',
+  'soil.moisture': 'আর্দ্রতা',
+  'soil.nutrients': 'পুষ্টি উপাদান',
+  'soil.heavyMetals': 'ভারী ধাতু',
+  'soil.issues': 'সমস্যা',
+  'soil.suitableCrops': 'উপযুক্ত ফসল',
+  'soil.createproject': 'প্রকল্প তৈরি করুন',
+  'soil.aiAnalysis': 'AI ভিত্তিক মাটি বিশ্লেষণ ও ফসলের পরামর্শ',
+
+  'disease.title': 'বিদ্যমান ছবি আপলোড করুন',
+  'disease.upload': 'ছবি আপলোড করুন',
+  'disease.guide': 'AI ভিত্তিক রোগ সনাক্তকরণ ও চিকিৎসা নির্দেশিকা',
+  'disease.uploadSuccess': 'ছবি সফলভাবে আপলোড হয়েছে',
+  'disease.analyze': 'AI দিয়ে বিশ্লেষণ করুন',
+
+  'disease.detectedIn': 'এ সনাক্ত হয়েছে',
+  'disease.severity': 'তীব্রতা:',
+  'disease.confident': 'বিশ্বাসের মাত্রা',
+  'disease.observedSymptoms': 'পর্যবেক্ষিত লক্ষণ',
+  'disease.preventiveTips': 'প্রতিরোধমূলক পরামর্শ',
+  'disease.recommendedProducts': 'প্রস্তাবিত পণ্য',
+  'disease.nutrientRecommendations': 'পুষ্টি পরামর্শ',
+  'disease.pesticideRecommendations': 'কীটনাশক পরামর্শ',
+  'disease.expectedRecovery': 'প্রত্যাশিত পুনরুদ্ধার',
+  'disease.treatmentReport': 'চিকিৎসা রিপোর্ট',
+  'disease.dosage': 'মাত্রা',
     // Navigation
      'nav.home': 'होम',
   'nav.soilAnalysis': 'मिट्टी विश्लेषण',
@@ -463,19 +536,12 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
     'stats.supportAvailable': 'सहायता उपलब्ध',
     
     // Soil Analysis Page
-    'soil.title': 'मिट्टी विश्लेषण और सिफारिशें',
-    'soil.subtitle': 'AI-संचालित विश्लेषण और सिफारिशों के लिए अपनी मिट्टी की रिपोर्ट अपलोड करें',
-    'soil.upload': 'मिट्टी रिपोर्ट अपलोड करें',
-    'soil.analyze': 'AI के साथ विश्लेषण करें',
-    'soil.recommendations': 'AI सिफारिशें',
-    'soil.generateReport': 'रिपोर्ट तैयार करें',
-    'soil.noFile': 'कृपया पहले मिट्टी की रिपोर्ट अपलोड करें',
-    'soil.analyzing': 'आपकी मिट्टी की रिपोर्ट का विश्लेषण कर रहे हैं...',
+   
     
     // Disease Detection Page
-    'disease.title': 'फसल रोग की पहचान',
+
     'disease.subtitle': 'तत्काल AI निदान के लिए रोगग्रस्त फसलों की तस्वीरें अपलोड करें',
-    'disease.upload': 'फसल की तस्वीर अपलोड करें',
+    
     'disease.detect': 'रोग की पहचान करें',
     'disease.diagnosis': 'रोग निदान',
     'disease.treatment': 'उपचार की सिफारिशें',
@@ -652,7 +718,46 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
   
   bn: {
     // Navigation
-    
+    'soil.title': 'মাটির বিশ্লেষণ ও সুপারিশ',
+  'soil.subtitle': 'AI ভিত্তিক বিশ্লেষণ ও সুপারিশের জন্য আপনার মাটির রিপোর্ট আপলোড করুন',
+  'soil.upload': 'মাটির রিপোর্ট আপলোড করুন',
+  'soil.uploadedFile': 'আপলোড করা ফাইল',
+  'common.projectCreating': 'প্রকল্প তৈরি করা হচ্ছে...',
+  'soil.analyze': 'AI দিয়ে বিশ্লেষণ করুন',
+  'soil.soilType': 'মাটির ধরন',
+  'soil.recommendations': 'AI সুপারিশ',
+  'soil.createProject': 'প্রকল্প তৈরি করুন',
+  'soil.generateReport': 'রিপোর্ট তৈরি করুন',
+  'soil.noFile': 'দয়া করে প্রথমে মাটির রিপোর্ট আপলোড করুন',
+  'soil.analyzing': 'আপনার মাটির রিপোর্ট বিশ্লেষণ করা হচ্ছে...',
+  'soil.uploadPrompt': 'আপনার মাটির পরীক্ষার ফলাফল সম্বলিত PDF, ছবি বা ডকুমেন্ট আপলোড করুন',
+  'soil.reportSummary': 'মাটির রিপোর্ট সারাংশ',
+  'soil.PH': 'পিএইচ স্তর',
+  'soil.organicMatter': 'জৈব পদার্থ',
+  'soil.moisture': 'আর্দ্রতা',
+  'soil.nutrients': 'পুষ্টি উপাদান',
+  'soil.heavyMetals': 'ভারী ধাতু',
+  'soil.issues': 'সমস্যা',
+  'soil.suitableCrops': 'উপযুক্ত ফসল',
+  'soil.createproject': 'প্রকল্প তৈরি করুন',
+  'soil.aiAnalysis': 'AI ভিত্তিক মাটি বিশ্লেষণ ও ফসলের সুপারিশ',
+
+  'disease.title': 'বিদ্যমান ছবি আপলোড করুন',
+  'disease.upload': 'ছবি আপলোড করুন',
+  'disease.guide': 'AI ভিত্তিক রোগ সনাক্তকরণ ও চিকিৎসা নির্দেশিকা',
+  'disease.uploadSuccess': 'ছবি সফলভাবে আপলোড হয়েছে',
+  'disease.analyze': 'AI দিয়ে বিশ্লেষণ করুন',
+
+  'disease.detectedIn': 'এ সনাক্ত হয়েছে',
+  'disease.severity': 'তীব্রতা:',
+  'disease.confident': 'বিশ্বাসের মাত্রা',
+  'disease.observedSymptoms': 'পর্যবেক্ষিত লক্ষণ',
+  'disease.preventiveTips': 'প্রতিরোধমূলক পরামর্শ',
+  'disease.recommendedProducts': 'প্রস্তাবিত পণ্য',
+  'disease.nutrientRecommendations': 'পুষ্টি পরামর্শ',
+  'disease.pesticideRecommendations': 'কীটনাশক পরামর্শ',
+  'disease.expectedRecovery': 'প্রত্যাশিত পুনরুদ্ধার',
+  'disease.treatmentReport': 'চিকিৎসা রিপোর্ট',
   'nav.home': 'হোম',
   'nav.soilAnalysis': 'মাটির বিশ্লেষণ',
   'nav.diseaseDetection': 'রোগ সনাক্তকরণ',
@@ -733,20 +838,14 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
     'stats.supportAvailable': 'সহায়তা উপলব্ধ',
     
     // Soil Analysis Page
-    'soil.title': 'মাটি বিশ্লেষণ ও সুপারিশ',
-    'soil.subtitle': 'AI-চালিত বিশ্লেষণ এবং সুপারিশের জন্য আপনার মাটি রিপোর্ট আপলোড করুন',
-    'soil.upload': 'মাটি রিপোর্ট আপলোড করুন',
-    'soil.analyze': 'AI দিয়ে বিশ্লেষণ করুন',
-    'soil.recommendations': 'AI সুপারিশ',
-    'soil.generateReport': 'রিপোর্ট তৈরি করুন',
-    'soil.noFile': 'দয়া করে প্রথমে একটি মাটি রিপোর্ট আপলোড করুন',
-    'soil.analyzing': 'আপনার মাটি রিপোর্ট বিশ্লেষণ করা হচ্ছে...',
+ 
     
     // Disease Detection Page
-    'disease.title': 'ফসল রোগ শনাক্তকরণ',
+   
     'disease.subtitle': 'তাত্ক্ষণিক AI রোগ নির্ণয়ের জন্য রোগগ্রস্ত ফসলের ছবি আপলোড করুন',
-    'disease.upload': 'ফসলের ছবি আপলোড করুন',
+    
     'disease.detect': 'রোগ শনাক্ত করুন',
+    'disease.dosage': 'মাত্রা',
     'disease.diagnosis': 'রোগ নির্ণয়',
     'disease.treatment': 'চিকিৎসার সুপারিশ',
     'disease.noImage': 'দয়া করে প্রথমে একটি ফসলের ছবি আপলোড করুন',
@@ -1221,6 +1320,48 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
   
   mr: {
     // Navigation
+    
+  'soil.title': 'माती विश्लेषण आणि शिफारसी',
+  'soil.subtitle': 'AI आधारित विश्लेषण आणि शिफारसींसाठी आपली माती अहवाल अपलोड करा',
+  'soil.upload': 'माती अहवाल अपलोड करा',
+  'soil.uploadedFile': 'अपलोड केलेली फाइल',
+  'common.projectCreating': 'प्रकल्प तयार केला जात आहे...',
+  'soil.analyze': 'AI द्वारे विश्लेषण करा',
+  'soil.soilType': 'मातीचा प्रकार',
+  'soil.recommendations': 'AI शिफारसी',
+  'soil.createProject': 'प्रकल्प तयार करा',
+  'soil.generateReport': 'अहवाल तयार करा',
+  'soil.noFile': 'कृपया प्रथम माती अहवाल अपलोड करा',
+  'soil.analyzing': 'आपला माती अहवाल विश्लेषित केला जात आहे...',
+  'soil.uploadPrompt': 'आपल्या माती चाचणी अहवाल असलेली PDF, प्रतिमा किंवा दस्तऐवज अपलोड करा',
+  'soil.reportSummary': 'माती अहवाल सारांश',
+  'soil.PH': 'पीएच पातळी',
+  'soil.organicMatter': 'सेंद्रिय घटक',
+  'soil.moisture': 'आर्द्रता',
+  'soil.nutrients': 'पोषक घटक',
+  'soil.heavyMetals': 'जड धातू',
+  'soil.issues': 'समस्या',
+  'soil.suitableCrops': 'योग्य पिके',
+  'soil.createproject': 'प्रकल्प तयार करा',
+  'soil.aiAnalysis': 'AI आधारित माती विश्लेषण आणि पीक शिफारसी',
+
+  'disease.title': 'विद्यमान प्रतिमा अपलोड करा',
+  'disease.upload': 'प्रतिमा अपलोड करा',
+  'disease.guide': 'AI आधारित रोग ओळख आणि उपचार मार्गदर्शक',
+  'disease.uploadSuccess': 'प्रतिमा यशस्वीरित्या अपलोड केली',
+  'disease.analyze': 'AI द्वारे विश्लेषण करा',
+
+  'disease.detectedIn': 'मध्ये आढळले',
+  'disease.severity': 'तीव्रता:',
+  'disease.confident': 'विश्वास पातळी',
+  'disease.observedSymptoms': 'आढळलेली लक्षणे',
+  'disease.preventiveTips': 'प्रतिबंधक उपाय',
+  'disease.recommendedProducts': 'शिफारस केलेली उत्पादने',
+  'disease.nutrientRecommendations': 'पोषक शिफारसी',
+  'disease.pesticideRecommendations': 'कीटकनाशक शिफारसी',
+  'disease.expectedRecovery': 'अपेक्षित बरे होणे',
+  'disease.treatmentReport': 'उपचार अहवाल',
+  'disease.dosage': 'मात्रा',
     'nav.home': 'होम',
     'nav.soilAnalysis': 'माती विश्लेषण',
     'nav.diseaseDetection': 'रोग ओळख',
@@ -1297,24 +1438,17 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
     'stats.supportAvailable': 'सहाय्य उपलब्ध',
     
     // Soil Analysis Page
-    'soil.title': 'माती विश्लेषण आणि शिफारसी',
-    'soil.subtitle': 'AI-संचालित विश्लेषण आणि शिफारसींसाठी आपल्या मातीच्या रिपोर्टला अपलोड करा',
-    'soil.upload': 'माती रिपोर्ट अपलोड करा',
-    'soil.analyze': 'AI सह विश्लेषण करा',
-    'soil.recommendations': 'AI शिफारसी',
-    'soil.generateReport': 'रिपोर्ट तयार करा',
-    'soil.noFile': 'कृपया प्रथम मातीचा रिपोर्ट अपलोड करा',
-    'soil.analyzing': 'आपल्या मातीच्या रिपोर्टचे विश्लेषण केले जात आहे...',
+  
     
     // Disease Detection Page
-    'disease.title': 'पिक रोग ओळख',
+    
     'disease.subtitle': 'तत्काळ AI निदानासाठी रोगग्रस्त पिकांचे चित्र अपलोड करा',
-    'disease.upload': 'पिकाचे चित्र अपलोड करा',
+    
     'disease.detect': 'రोग ओळखा',
     'disease.diagnosis': 'రोग నిర్ధారణ',
-    'disease.treatment': 'చికిత్స శిఫారసులు',
-    'disease.noImage': 'కృపయా ముందు ఒక పిక్చర్ అప్లోడ్ చేయండి',
-    'disease.detecting': 'పిక్చర్ విశ్లేషణ జరుగుతోంది...',
+    'disease.treatment': 'उपचार शिफारसी',
+    'disease.noImage': 'कृपया पहले एक पिक छवि अपलोड करें',
+    'disease.detecting': 'पिक छवि का विश्लेषण किया जा रहा है...',
     
     // Fertilizer Plans Page
     'fertilizer.title': 'खत शिफारसी',
@@ -1485,6 +1619,48 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
   
   ta: {
     // Navigation
+    
+  'soil.title': 'மண் பகுப்பாய்வு மற்றும் பரிந்துரைகள்',
+  'soil.subtitle': 'AI அடிப்படையிலான பகுப்பாய்வு மற்றும் பரிந்துரைகளுக்கு உங்கள் மண் அறிக்கையை பதிவேற்றவும்',
+  'soil.upload': 'மண் அறிக்கை பதிவேற்றம்',
+  'soil.uploadedFile': 'பதிவேற்றப்பட்ட கோப்பு',
+  'common.projectCreating': 'திட்டம் உருவாக்கப்படுகிறது...',
+  'soil.analyze': 'AI மூலம் பகுப்பாய்வு செய்யவும்',
+  'soil.soilType': 'மண் வகை',
+  'soil.recommendations': 'AI பரிந்துரைகள்',
+  'soil.createProject': 'திட்டம் உருவாக்கவும்',
+  'soil.generateReport': 'அறிக்கை உருவாக்கவும்',
+  'soil.noFile': 'முதலில் மண் அறிக்கையை பதிவேற்றவும்',
+  'soil.analyzing': 'உங்கள் மண் அறிக்கை பகுப்பாய்வு செய்யப்படுகிறது...',
+  'soil.uploadPrompt': 'உங்கள் மண் பரிசோதனை முடிவுகள் கொண்ட PDF, படம் அல்லது ஆவணத்தை பதிவேற்றவும்',
+  'soil.reportSummary': 'மண் அறிக்கை சுருக்கம்',
+  'soil.PH': 'பிஹெச் அளவு',
+  'soil.organicMatter': 'செயற்கைச் சத்து',
+  'soil.moisture': 'ஈரப்பதம்',
+  'soil.nutrients': 'ஊட்டச்சத்துகள்',
+  'soil.heavyMetals': 'கனிம உலோகங்கள்',
+  'soil.issues': 'பிரச்சினைகள்',
+  'soil.suitableCrops': 'உகந்த பயிர்கள்',
+  'soil.createproject': 'திட்டம் உருவாக்கவும்',
+  'soil.aiAnalysis': 'AI அடிப்படையிலான மண் பகுப்பாய்வு மற்றும் பயிர் பரிந்துரைகள்',
+
+  'disease.title': 'இருக்கும் படங்களை பதிவேற்றவும்',
+  'disease.upload': 'படத்தை பதிவேற்றவும்',
+  'disease.guide': 'AI அடிப்படையிலான நோய் கண்டறிதல் மற்றும் சிகிச்சை வழிகாட்டி',
+  'disease.uploadSuccess': 'படம் வெற்றிகரமாக பதிவேற்றப்பட்டது',
+  'disease.analyze': 'AI மூலம் பகுப்பாய்வு செய்யவும்',
+
+  'disease.detectedIn': 'இல் கண்டறியப்பட்டது',
+  'disease.severity': 'தீவிரம்:',
+  'disease.confident': 'நம்பிக்கை அளவு',
+  'disease.observedSymptoms': 'கவனிக்கப்பட்ட அறிகுறிகள்',
+  'disease.preventiveTips': 'தடுப்பு குறிப்புகள்',
+  'disease.recommendedProducts': 'பரிந்துரைக்கப்பட்ட தயாரிப்புகள்',
+  'disease.nutrientRecommendations': 'ஊட்டச்சத்து பரிந்துரைகள்',
+  'disease.pesticideRecommendations': 'பூச்சிக்கொல்லி பரிந்துரைகள்',
+  'disease.expectedRecovery': 'எதிர்பார்க்கப்படும் மீட்பு',
+  'disease.treatmentReport': 'சிகிச்சை அறிக்கை',
+  'disease.dosage': 'அளவு',
     'nav.home': 'முகப்பு',
     'nav.soilAnalysis': 'மண் பகுப்பாய்வு',
     'nav.diseaseDetection': 'நோய் கண்டறிதல்',
@@ -1563,19 +1739,12 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
     'stats.supportAvailable': 'உதவி கிடைக்கிறது',
     
     // Soil Analysis Page
-    'soil.title': 'மண் பகுப்பாய்வு & பரிந்துரைகள்',
-    'soil.subtitle': 'AI-அடிப்படையிலான பகுப்பாய்வு மற்றும் பரிந்துரைகளுக்கு உங்கள் மண் அறிக்கையை பதிவேற்றவும்',
-    'soil.upload': 'மண் அறிக்கையை பதிவேற்றவும்',
-    'soil.analyze': 'AI உடன் பகுப்பாய்வு செய்',
-    'soil.recommendations': 'AI பரிந்துரைகள்',
-    'soil.generateReport': 'அறிக்கையை உருவாக்கவும்',
-    'soil.noFile': 'முதலில் ஒரு மண் அறிக்கையைப் பதிவேற்றவும்',
-    'soil.analyzing': 'உங்கள் மண் அறிக்கையைப் பகுப்பாய்வு செய்கிறோம்...',
+    
     
     // Disease Detection Page
-    'disease.title': 'பயிர் நோய் கண்டறிதல்',
+    
     'disease.subtitle': 'உடனடி AI நோயியல் கண்டு பிடிக்க நோய் பாதித்த பயிர்களின் படங்களை பதிவேற்றவும்',
-    'disease.upload': 'பயிர் படத்தை பதிவேற்றவும்',
+    
     'disease.detect': 'நோயை கண்டறி',
     'disease.diagnosis': 'நோயியல்',
     'disease.treatment': 'சிகிச்சை பரிந்துரைகள்',
@@ -1751,6 +1920,48 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
   },
   gu: {
   // Navigation
+  
+  'soil.title': 'માટી વિશ્લેષણ અને ભલામણો',
+  'soil.subtitle': 'AI આધારિત વિશ્લેષણ અને ભલામણો માટે તમારી માટી રિપોર્ટ અપલોડ કરો',
+  'soil.upload': 'માટી રિપોર્ટ અપલોડ કરો',
+  'soil.uploadedFile': 'અપલોડ કરેલી ફાઇલ',
+  'common.projectCreating': 'પ્રોજેક્ટ બનાવાઈ રહ્યો છે...',
+  'soil.analyze': 'AI દ્વારા વિશ્લેષણ કરો',
+  'soil.soilType': 'માટીનો પ્રકાર',
+  'soil.recommendations': 'AI ભલામણો',
+  'soil.createProject': 'પ્રોજેક્ટ બનાવો',
+  'soil.generateReport': 'રિપોર્ટ બનાવો',
+  'soil.noFile': 'કૃપા કરીને પહેલા માટી રિપોર્ટ અપલોડ કરો',
+  'soil.analyzing': 'તમારી માટી રિપોર્ટનું વિશ્લેષણ થઈ રહ્યું છે...',
+  'soil.uploadPrompt': 'તમારા માટી પરીક્ષણના પરિણામો ધરાવતી PDF, છબી અથવા દસ્તાવેજ અપલોડ કરો',
+  'soil.reportSummary': 'માટી રિપોર્ટ સારાંશ',
+  'soil.PH': 'પીએચ સ્તર',
+  'soil.organicMatter': 'સજીવ પદાર્થ',
+  'soil.moisture': 'ભેજ',
+  'soil.nutrients': 'પોષક તત્ત્વો',
+  'soil.heavyMetals': 'ભારે ધાતુઓ',
+  'soil.issues': 'સમસ્યાઓ',
+  'soil.suitableCrops': 'યોગ્ય પાક',
+  'soil.createproject': 'પ્રોજેક્ટ બનાવો',
+  'soil.aiAnalysis': 'AI આધારિત માટી વિશ્લેષણ અને પાક ભલામણો',
+
+  'disease.title': 'હાલની છબીઓ અપલોડ કરો',
+  'disease.upload': 'છબી અપલોડ કરો',
+  'disease.guide': 'AI આધારિત રોગ ઓળખ અને સારવાર માર્ગદર્શિકા',
+  'disease.uploadSuccess': 'છબી સફળતાપૂર્વક અપલોડ થઈ',
+  'disease.analyze': 'AI દ્વારા વિશ્લેષણ કરો',
+
+  'disease.detectedIn': 'માં શોધાયું',
+  'disease.severity': 'તીવ્રતા:',
+  'disease.confident': 'વિશ્વાસ સ્તર',
+  'disease.observedSymptoms': 'જોઈેલ લક્ષણો',
+  'disease.preventiveTips': 'પ્રતિરોધક સૂચનો',
+  'disease.recommendedProducts': 'ભલામણ કરેલા ઉત્પાદનો',
+  'disease.nutrientRecommendations': 'પોષક ભલામણો',
+  'disease.pesticideRecommendations': 'કીટનાશક ભલામણો',
+  'disease.expectedRecovery': 'અપેક્ષિત સુધારો',
+  'disease.treatmentReport': 'ઉપચાર અહેવાલ',
+  'disease.dosage': 'માત્રા',
   'nav.home': 'હોમ',
   'nav.soilAnalysis': 'માટી વિશ્લેષણ',
   'nav.diseaseDetection': 'રોગ ઓળખ',
@@ -1819,31 +2030,9 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
   'common.open': 'ખોલો',
   'common.voice': 'અવાજ',
   'common.download': 'ડાઉનલોડ',
-  'common.save': 'સાચવો',
-  'common.cancel': 'રદ કરો',
-  'common.loading': 'લોડ થઈ રહ્યું છે...',
-  'common.error': 'ભૂલ',
-  'common.success': 'સફળતા',
 
-  // Stats
-  'stats.farmersHelped': 'ખેડુતોને મદદ',
-  'stats.accuracyRate': 'શુદ્ધતા દર',
-  'stats.supportAvailable': 'સહાય ઉપલબ્ધ',
-
-  // Soil Analysis Page
-  'soil.title': 'માટી વિશ્લેષણ અને ભલામણો',
-  'soil.subtitle': 'AI આધારિત વિશ્લેષણ અને ભલામણ માટે તમારી માટી રિપોર્ટ અપલોડ કરો',
-  'soil.upload': 'માટી રિપોર્ટ અપલોડ કરો',
-  'soil.analyze': 'AI સાથે વિશ્લેષણ કરો',
-  'soil.recommendations': 'AI ભલામણો',
-  'soil.generateReport': 'રિપોર્ટ બનાવો',
-  'soil.noFile': 'કૃપા કરીને પહેલા માટી રિપોર્ટ અપલોડ કરો',
-  'soil.analyzing': 'તમારી માટી રિપોર્ટનું વિશ્લેષણ થઈ રહ્યું છે...',
-
-  // Disease Detection Page
-  'disease.title': 'પાક રોગ ઓળખ',
   'disease.subtitle': 'તાત્કાલિક AI નિદાન માટે રોગગ્રસ્ત પાકના ફોટા અપલોડ કરો',
-  'disease.upload': 'પાકનો ફોટો અપલોડ કરો',
+  
   'disease.detect': 'રોગ ઓળખો',
   'disease.diagnosis': 'રોગ નિદાન',
   'disease.treatment': 'ઉપચારની ભલામણો',
@@ -2017,6 +2206,48 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
 },
 kn: {
   // Navigation
+  
+  'soil.title': 'ಮಣ್ಣು ವಿಶ್ಲೇಷಣೆ ಮತ್ತು ಶಿಫಾರಸುಗಳು',
+  'soil.subtitle': 'AI ಆಧಾರಿತ ವಿಶ್ಲೇಷಣೆ ಮತ್ತು ಶಿಫಾರಸುಗಳಿಗೆ ನಿಮ್ಮ ಮಣ್ಣು ವರದಿಯನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ',
+  'soil.upload': 'ಮಣ್ಣು ವರದಿ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ',
+  'soil.uploadedFile': 'ಅಪ್‌ಲೋಡ್ ಮಾಡಿದ ಫೈಲ್',
+  'common.projectCreating': 'ಯೋಜನೆ ರಚಿಸಲಾಗುತ್ತಿದೆ...',
+  'soil.analyze': 'AI ಮೂಲಕ ವಿಶ್ಲೇಷಿಸಿ',
+  'soil.soilType': 'ಮಣ್ಣಿನ ಪ್ರಕಾರ',
+  'soil.recommendations': 'AI ಶಿಫಾರಸುಗಳು',
+  'soil.createProject': 'ಯೋಜನೆ ರಚಿಸಿ',
+  'soil.generateReport': 'ವರದಿ ಸೃಷ್ಟಿಸಿ',
+  'soil.noFile': 'ದಯವಿಟ್ಟು ಮೊದಲು ಮಣ್ಣು ವರದಿ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ',
+  'soil.analyzing': 'ನಿಮ್ಮ ಮಣ್ಣು ವರದಿ ವಿಶ್ಲೇಷಿಸಲಾಗುತ್ತಿದೆ...',
+  'soil.uploadPrompt': 'ನಿಮ್ಮ ಮಣ್ಣು ಪರೀಕ್ಷೆಯ ಫಲಿತಾಂಶಗಳನ್ನು ಹೊಂದಿರುವ PDF, ಚಿತ್ರ ಅಥವಾ ದಸ್ತಾವೇಜನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ',
+  'soil.reportSummary': 'ಮಣ್ಣು ವರದಿ ಸಾರಾಂಶ',
+  'soil.PH': 'ಪಿಹೆಚ್ ಮಟ್ಟ',
+  'soil.organicMatter': 'ಜೈವಿಕ ಪದಾರ್ಥ',
+  'soil.moisture': 'ಆರ್ದ್ರತೆ',
+  'soil.nutrients': 'ಪೋಷಕಾಂಶಗಳು',
+  'soil.heavyMetals': 'ಭಾರವಾದ ಲೋಹಗಳು',
+  'soil.issues': 'ಸಮಸ್ಯೆಗಳು',
+  'soil.suitableCrops': 'ಯೋಗ್ಯ ಬೆಳೆಗಳು',
+  'soil.createproject': 'ಯೋಜನೆ ರಚಿಸಿ',
+  'soil.aiAnalysis': 'AI ಆಧಾರಿತ ಮಣ್ಣು ವಿಶ್ಲೇಷಣೆ ಮತ್ತು ಬೆಳೆ ಶಿಫಾರಸುಗಳು',
+
+  'disease.title': 'ಇದ್ದಿರುವ ಚಿತ್ರಗಳನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ',
+  'disease.upload': 'ಚಿತ್ರವನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ',
+  'disease.guide': 'AI ಆಧಾರಿತ ರೋಗ ಪತ್ತೆ ಮತ್ತು ಚಿಕಿತ್ಸಾ ಮಾರ್ಗದರ್ಶಿ',
+  'disease.uploadSuccess': 'ಚಿತ್ರ ಯಶಸ್ವಿಯಾಗಿ ಅಪ್‌ಲೋಡ್ ಮಾಡಲಾಗಿದೆ',
+  'disease.analyze': 'AI ಮೂಲಕ ವಿಶ್ಲೇಷಿಸಿ',
+
+  'disease.detectedIn': 'ನಲ್ಲಿ ಪತ್ತೆಯಾಯಿತು',
+  'disease.severity': 'ತೀವ್ರತೆ:',
+  'disease.confident': 'ನಂಬಿಕೆ ಮಟ್ಟ',
+  'disease.observedSymptoms': 'ಗಮನಿಸಿದ ಲಕ್ಷಣಗಳು',
+  'disease.preventiveTips': 'ತಡೆ ಸಲಹೆಗಳು',
+  'disease.recommendedProducts': 'ಶಿಫಾರಸು ಮಾಡಿದ ಉತ್ಪನ್ನಗಳು',
+  'disease.nutrientRecommendations': 'ಪೋಷಕ ಶಿಫಾರಸುಗಳು',
+  'disease.pesticideRecommendations': 'ಕೀಟನಾಶಕ ಶಿಫಾರಸುಗಳು',
+  'disease.expectedRecovery': 'ನಿರೀಕ್ಷಿತ ಚೇತರಿಕೆ',
+  'disease.treatmentReport': 'ಚಿಕಿತ್ಸಾ ವರದಿ',
+  'disease.dosage': 'ಮಾತ್ರೆ',
   'nav.home': 'ಮುಖಪುಟ',
   'nav.soilAnalysis': 'ಮಣ್ಣು ವಿಶ್ಲೇಷಣೆ',
   'nav.diseaseDetection': 'ರೋಗ ಪತ್ತೆ',
@@ -2096,19 +2327,12 @@ kn: {
   'stats.supportAvailable': 'ಬೆಂಬಲ ಲಭ್ಯ',
 
   // Soil Analysis Page
-  'soil.title': 'ಮಣ್ಣು ವಿಶ್ಲೇಷಣೆ ಮತ್ತು ಶಿಫಾರಸುಗಳು',
-  'soil.subtitle': 'AI ಆಧಾರಿತ ವಿಶ್ಲೇಷಣೆಗಾಗಿ ನಿಮ್ಮ ಮಣ್ಣು ವರದಿ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ',
-  'soil.upload': 'ಮಣ್ಣು ವರದಿ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ',
-  'soil.analyze': 'AI ಮೂಲಕ ವಿಶ್ಲೇಷಿಸಿ',
-  'soil.recommendations': 'AI ಶಿಫಾರಸುಗಳು',
-  'soil.generateReport': 'ವರದಿ ರಚಿಸಿ',
-  'soil.noFile': 'ದಯವಿಟ್ಟು ಮೊದಲು ಮಣ್ಣು ವರದಿ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ',
-  'soil.analyzing': 'ನಿಮ್ಮ ಮಣ್ಣು ವರದಿ ವಿಶ್ಲೇಷಿಸಲಾಗುತ್ತಿದೆ...',
+ 
 
   // Disease Detection Page
-  'disease.title': 'ಬೆಳೆ ರೋಗ ಪತ್ತೆ',
+
   'disease.subtitle': 'ತಕ್ಷಣದ AI ಪತ್ತೆಗೆ ರೋಗಗ್ರಸ್ತ ಬೆಳೆ ಚಿತ್ರಗಳನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ',
-  'disease.upload': 'ಬೆಳೆ ಚಿತ್ರ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ',
+  
   'disease.detect': 'ರೋಗ ಪತ್ತೆ ಮಾಡಿ',
   'disease.diagnosis': 'ರೋಗ ಪತ್ತೆ',
   'disease.treatment': 'ಚಿಕಿತ್ಸೆ ಶಿಫಾರಸುಗಳು',
@@ -2282,7 +2506,49 @@ kn: {
 },
 
 ml: {
-  // Navigation
+  // Navigation\
+  
+  'soil.title': 'മണ്ണ് വിശകലനവും ശുപാർശകളും',
+  'soil.subtitle': 'AI അടിസ്ഥാനത്തിലുള്ള വിശകലനത്തിനും ശുപാർശകൾക്കുമായി നിങ്ങളുടെ മണ്ണ് റിപ്പോർട്ട് അപ്‌ലോഡ് ചെയ്യുക',
+  'soil.upload': 'മണ്ണ് റിപ്പോർട്ട് അപ്‌ലോഡ് ചെയ്യുക',
+  'soil.uploadedFile': 'അപ്‌ലോഡ് ചെയ്ത ഫയൽ',
+  'common.projectCreating': 'പദ്ധതി സൃഷ്ടിക്കപ്പെടുന്നു...',
+  'soil.analyze': 'AI ഉപയോഗിച്ച് വിശകലനം ചെയ്യുക',
+  'soil.soilType': 'മണ്ണിന്റെ തരം',
+  'soil.recommendations': 'AI ശുപാർശകൾ',
+  'soil.createProject': 'പദ്ധതി സൃഷ്ടിക്കുക',
+  'soil.generateReport': 'റിപ്പോർട്ട് സൃഷ്ടിക്കുക',
+  'soil.noFile': 'ദയവായി ആദ്യം മണ്ണ് റിപ്പോർട്ട് അപ്‌ലോഡ് ചെയ്യുക',
+  'soil.analyzing': 'നിങ്ങളുടെ മണ്ണ് റിപ്പോർട്ട് വിശകലനം ചെയ്യുന്നു...',
+  'soil.uploadPrompt': 'നിങ്ങളുടെ മണ്ണ് പരിശോധന ഫലങ്ങൾ ഉൾക്കൊള്ളുന്ന PDF, ചിത്രം അല്ലെങ്കിൽ രേഖ അപ്‌ലോഡ് ചെയ്യുക',
+  'soil.reportSummary': 'മണ്ണ് റിപ്പോർട്ട് സംഗ്രഹം',
+  'soil.PH': 'പിഎച്ച് നില',
+  'soil.organicMatter': 'ജൈവ ഘടകം',
+  'soil.moisture': 'ഈർപ്പം',
+  'soil.nutrients': 'പോഷകങ്ങൾ',
+  'soil.heavyMetals': 'ഭാരമുള്ള ലോഹങ്ങൾ',
+  'soil.issues': 'പ്രശ്നങ്ങൾ',
+  'soil.suitableCrops': 'യോഗ്യമായ വിളകൾ',
+  'soil.createproject': 'പദ്ധതി സൃഷ്ടിക്കുക',
+  'soil.aiAnalysis': 'AI അടിസ്ഥാനമാക്കിയ മണ്ണ് വിശകലനം ಮತ್ತು വിള ശുപാർശകൾ',
+
+  'disease.title': 'നിലവിലുള്ള ചിത്രങ്ങൾ അപ്‌ലോഡ് ചെയ്യുക',
+  'disease.upload': 'ചിത്രം അപ്‌ലോഡ് ചെയ്യുക',
+  'disease.guide': 'AI അടിസ്ഥാനമാക്കിയ രോഗ തിരിച്ചറിവ് ಮತ್ತು ചികിത്സ മാർഗ്ഗനിർദേശം',
+  'disease.uploadSuccess': 'ചിത്രം വിജയകരമായി അപ്‌ലോഡ് ചെയ്തു',
+  'disease.analyze': 'AI ഉപയോഗിച്ച് വിശകലനം ചെയ്യുക',
+
+  'disease.detectedIn': 'ഇൽ കണ്ടെത്തി',
+  'disease.severity': 'തീവ്രത:',
+  'disease.confident': 'വിശ്വാസനില',
+  'disease.observedSymptoms': 'കണ്ടെത്തിയ ലക്ഷണങ്ങൾ',
+  'disease.preventiveTips': 'പ്രതിരോധ നിർദ്ദേശങ്ങൾ',
+  'disease.recommendedProducts': 'ശുപാർശ ചെയ്ത ഉൽപ്പന്നങ്ങൾ',
+  'disease.nutrientRecommendations': 'പോഷക ശുപാർശകൾ',
+  'disease.pesticideRecommendations': 'കീടനാശിനി ശുപാർശകൾ',
+  'disease.expectedRecovery': 'പ്രതീക്ഷിക്കുന്ന വീണ്ടെടുപ്പ്',
+  'disease.treatmentReport': 'ചികിത്സ റിപ്പോർട്ട്',
+  'disease.dosage': 'അളവ്',
   'nav.home': 'ഹോം',
   'nav.soilAnalysis': 'മണ്ണ് വിശകലനം',
   'nav.diseaseDetection': 'രോഗം കണ്ടെത്തല്‍',
@@ -2360,19 +2626,11 @@ ml: {
   'stats.supportAvailable': 'സഹായം ലഭ്യമാണ്',
 
   // Soil Analysis Page
-  'soil.title': 'മണ്ണ് വിശകലനം & ശുപാര്‍ശകള്‍',
-  'soil.subtitle': 'AI അധിഷ്ഠിത വിശകലനത്തിനും ശുപാര്‍ശകള്‍ക്കും നിങ്ങളുടെ മണ്ണ് റിപ്പോര്‍ട്ട് അപ്‌ലോഡ് ചെയ്യുക',
-  'soil.upload': 'മണ്ണ് റിപ്പോര്‍ട്ട് അപ്‌ലോഡ് ചെയ്യുക',
-  'soil.analyze': 'AI ഉപയോഗിച്ച് വിശകലനം ചെയ്യുക',
-  'soil.recommendations': 'AI ശുപാര്‍ശകള്‍',
-  'soil.generateReport': 'റിപ്പോര്‍ട്ട് സൃഷ്ടിക്കുക',
-  'soil.noFile': 'ദയവായി ആദ്യം മണ്ണ് റിപ്പോര്‍ട്ട് അപ്‌ലോഡ് ചെയ്യുക',
-  'soil.analyzing': 'നിങ്ങളുടെ മണ്ണ് റിപ്പോര്‍ട്ട് വിശകലനം ചെയ്യുന്നു...',
 
   // Disease Detection Page
-  'disease.title': 'വിള രോഗം കണ്ടെത്തല്‍',
+  
   'disease.subtitle': 'ഉടന്‍ AI രോഗനിര്‍ണയത്തിനായി രോഗബാധിത വിളയുടെ ചിത്രങ്ങള്‍ അപ്‌ലോഡ് ചെയ്യുക',
-  'disease.upload': 'വിള ചിത്രം അപ്‌ലോഡ് ചെയ്യുക',
+  
   'disease.detect': 'രോഗം കണ്ടെത്തുക',
   'disease.diagnosis': 'രോഗനിര്‍ണയം',
   'disease.treatment': 'ചികിത്സ ശുപാര്‍ശകള്‍',
@@ -2547,6 +2805,48 @@ ml: {
 
 or: {
   // Navigation
+  
+  'soil.title': 'ମାଟି ବିଶ୍ଳେଷଣ ଓ ସୁପାରିଶ',
+  'soil.subtitle': 'AI ଆଧାରିତ ବିଶ୍ଳେଷଣ ଓ ସୁପାରିଶ ପାଇଁ ଆପଣଙ୍କ ମାଟି ରିପୋର୍ଟ ଅପଲୋଡ୍ କରନ୍ତୁ',
+  'soil.upload': 'ମାଟି ରିପୋର୍ଟ ଅପଲୋଡ୍ କରନ୍ତୁ',
+  'soil.uploadedFile': 'ଅପଲୋଡ୍ କରାଯାଇଥିବା ଫାଇଲ',
+  'common.projectCreating': 'ପ୍ରକଳ୍ପ ସୃଷ୍ଟି ହେଉଛି...',
+  'soil.analyze': 'AI ସହ ବିଶ୍ଳେଷଣ କରନ୍ତୁ',
+  'soil.soilType': 'ମାଟିର ପ୍ରକାର',
+  'soil.recommendations': 'AI ସୁପାରିଶ',
+  'soil.createProject': 'ପ୍ରକଳ୍ପ ସୃଷ୍ଟି କରନ୍ତୁ',
+  'soil.generateReport': 'ରିପୋର୍ଟ ସୃଷ୍ଟି କରନ୍ତୁ',
+  'soil.noFile': 'ଦୟାକରି ପ୍ରଥମେ ମାଟି ରିପୋର୍ଟ ଅପଲୋଡ୍ କରନ୍ତୁ',
+  'soil.analyzing': 'ଆପଣଙ୍କ ମାଟି ରିପୋର୍ଟ ବିଶ୍ଳେଷଣ କରାଯାଉଛି...',
+  'soil.uploadPrompt': 'ଆପଣଙ୍କ ମାଟି ପରୀକ୍ଷା ଫଳାଫଳ ଥିବା PDF, ଛବି କିମ୍ବା ଡକ୍ୟୁମେଣ୍ଟ ଅପଲୋଡ୍ କରନ୍ତୁ',
+  'soil.reportSummary': 'ମାଟି ରିପୋର୍ଟ ସାରାଂଶ',
+  'soil.PH': 'ପିଏଚ୍ ସ୍ତର',
+  'soil.organicMatter': 'ଜୈବ ପଦାର୍ଥ',
+  'soil.moisture': 'ଆର୍ଦ୍ରତା',
+  'soil.nutrients': 'ପୋଷକ ତତ୍ତ୍ୱ',
+  'soil.heavyMetals': 'ଭାରୀ ଧାତୁ',
+  'soil.issues': 'ସମସ୍ୟା',
+  'soil.suitableCrops': 'ଯୋଗ୍ୟ ଫସଲ',
+  'soil.createproject': 'ପ୍ରକଳ୍ପ ସୃଷ୍ଟି କରନ୍ତୁ',
+  'soil.aiAnalysis': 'AI ଆଧାରିତ ମାଟି ବିଶ୍ଳେଷଣ ଓ ଫସଲ ସୁପାରିଶ',
+
+  'disease.title': 'ବର୍ତ୍ତମାନ ଥିବା ଛବି ଅପଲୋଡ୍ କରନ୍ତୁ',
+  'disease.upload': 'ଛବି ଅପଲୋଡ୍ କରନ୍ତୁ',
+  'disease.guide': 'AI ଆଧାରିତ ରୋଗ ଚିହ୍ନଟ ଓ ଚିକିତ୍ସା ମାର୍ଗଦର୍ଶିକା',
+  'disease.uploadSuccess': 'ଛବି ସଫଳତାର ସହିତ ଅପଲୋଡ୍ ହେଲା',
+  'disease.analyze': 'AI ସହ ବିଶ୍ଳେଷଣ କରନ୍ତୁ',
+
+  'disease.detectedIn': 'ରେ ଚିହ୍ନଟ ହେଲା',
+  'disease.severity': 'ତୀବ୍ରତା:',
+  'disease.confident': 'ବିଶ୍ୱାସ ସ୍ତର',
+  'disease.observedSymptoms': 'ଦେଖାଯାଇଥିବା ଲକ୍ଷଣ',
+  'disease.preventiveTips': 'ପ୍ରତିରୋଧ ପରାମର୍ଶ',
+  'disease.recommendedProducts': 'ସୁପାରିଶ କରାଯାଇଥିବା ପ୍ରଡକ୍ଟ',
+  'disease.nutrientRecommendations': 'ପୋଷକ ସୁପାରିଶ',
+  'disease.pesticideRecommendations': 'କୀଟନାଶକ ସୁପାରିଶ',
+  'disease.expectedRecovery': 'ଆଶାକରା ସୁସ୍ଥତା',
+  'disease.treatmentReport': 'ଚିକିତ୍ସା ରିପୋର୍ଟ',
+  'disease.dosage': 'ମାତ୍ରା',
   'nav.home': 'ହୋମ୍',
   'nav.soilAnalysis': 'ମାଟି ବିଶ୍ଲେଷଣ',
   'nav.diseaseDetection': 'ରୋଗ ଚିହ୍ନଟ',
@@ -2623,19 +2923,12 @@ or: {
   'stats.supportAvailable': 'ସହାୟତା ଉପଲବ୍ଧ',
 
   // Soil Analysis Page
-  'soil.title': 'ମାଟି ବିଶ୍ଲେଷଣ ଏବଂ ଶିଫାରସ୍',
-  'soil.subtitle': 'AI ଆଧାରିତ ବିଶ୍ଲେଷଣ ପାଇଁ ଆପଣଙ୍କର ମାଟି ରିପୋର୍ଟ ଅପଲୋଡ୍ କରନ୍ତୁ',
-  'soil.upload': 'ମାଟି ରିପୋର୍ଟ ଅପଲୋଡ୍ କରନ୍ତୁ',
-  'soil.analyze': 'AI ସହିତ ବିଶ୍ଲେଷଣ କରନ୍ତୁ',
-  'soil.recommendations': 'AI ଶିଫାରସ୍',
-  'soil.generateReport': 'ରିପୋର୍ଟ ତିଆରି କରନ୍ତୁ',
-  'soil.noFile': 'ଦୟାକରି ପ୍ରଥମେ ମାଟି ରିପୋର୍ଟ ଅପଲୋଡ୍ କରନ୍ତୁ',
-  'soil.analyzing': 'ଆପଣଙ୍କର ମାଟି ରିପୋର୍ଟ ବିଶ୍ଲେଷଣ ହେଉଛି...',
+  
 
   // Disease Detection Page
-  'disease.title': 'ଫସଲ ରୋଗ ଚିହ୍ନଟ',
+
   'disease.subtitle': 'ତତ୍କାଳ AI ଚିହ୍ନଟ ପାଇଁ ରୋଗଗ୍ରସ୍ତ ଫସଲ ଫଟୋ ଅପଲୋଡ୍ କରନ୍ତୁ',
-  'disease.upload': 'ଫସଲ ଫଟୋ ଅପଲୋଡ୍ କରନ୍ତୁ',
+  
   'disease.detect': 'ରୋଗ ଚିହ୍ନଟ କରନ୍ତୁ',
   'disease.diagnosis': 'ରୋଗ ନିର୍ଣ୍ଣୟ',
   'disease.treatment': 'ଚିକିତ୍ସା ଶିଫାରସ୍',
@@ -2811,6 +3104,48 @@ or: {
 
 pa: {
   // Navigation
+  
+  'soil.title': 'ਮਿੱਟੀ ਵਿਸ਼ਲੇਸ਼ਣ ਅਤੇ ਸਿਫਾਰਸ਼ਾਂ',
+  'soil.subtitle': 'AI ਅਧਾਰਿਤ ਵਿਸ਼ਲੇਸ਼ਣ ਅਤੇ ਸਿਫਾਰਸ਼ਾਂ ਲਈ ਆਪਣੀ ਮਿੱਟੀ ਰਿਪੋਰਟ ਅੱਪਲੋਡ ਕਰੋ',
+  'soil.upload': 'ਮਿੱਟੀ ਰਿਪੋਰਟ ਅੱਪਲੋਡ ਕਰੋ',
+  'soil.uploadedFile': 'ਅੱਪਲੋਡ ਕੀਤੀ ਫਾਇਲ',
+  'common.projectCreating': 'ਪ੍ਰੋਜੈਕਟ ਬਣਾਇਆ ਜਾ ਰਿਹਾ ਹੈ...',
+  'soil.analyze': 'AI ਨਾਲ ਵਿਸ਼ਲੇਸ਼ਣ ਕਰੋ',
+  'soil.soilType': 'ਮਿੱਟੀ ਦੀ ਕਿਸਮ',
+  'soil.recommendations': 'AI ਸਿਫਾਰਸ਼ਾਂ',
+  'soil.createProject': 'ਪ੍ਰੋਜੈਕਟ ਬਣਾਓ',
+  'soil.generateReport': 'ਰਿਪੋਰਟ ਤਿਆਰ ਕਰੋ',
+  'soil.noFile': 'ਕਿਰਪਾ ਕਰਕੇ ਪਹਿਲਾਂ ਮਿੱਟੀ ਰਿਪੋਰਟ ਅੱਪਲੋਡ ਕਰੋ',
+  'soil.analyzing': 'ਤੁਹਾਡੀ ਮਿੱਟੀ ਰਿਪੋਰਟ ਦਾ ਵਿਸ਼ਲੇਸ਼ਣ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ...',
+  'soil.uploadPrompt': 'ਆਪਣੇ ਮਿੱਟੀ ਟੈਸਟ ਦੇ ਨਤੀਜਿਆਂ ਵਾਲੀ PDF, ਤਸਵੀਰ ਜਾਂ ਦਸਤਾਵੇਜ਼ ਅੱਪਲੋਡ ਕਰੋ',
+  'soil.reportSummary': 'ਮਿੱਟੀ ਰਿਪੋਰਟ ਸੰਖੇਪ',
+  'soil.PH': 'ਪੀਐਚ ਪੱਧਰ',
+  'soil.organicMatter': 'ਜੈਵਿਕ ਪਦਾਰਥ',
+  'soil.moisture': 'ਨਮੀ',
+  'soil.nutrients': 'ਪੋਸ਼ਕ ਤੱਤ',
+  'soil.heavyMetals': 'ਭਾਰੀ ਧਾਤਾਂ',
+  'soil.issues': 'ਸਮੱਸਿਆਵਾਂ',
+  'soil.suitableCrops': 'ਉਚਿਤ ਫਸਲਾਂ',
+  'soil.createproject': 'ਪ੍ਰੋਜੈਕਟ ਬਣਾਓ',
+  'soil.aiAnalysis': 'AI ਆਧਾਰਿਤ ਮਿੱਟੀ ਵਿਸ਼ਲੇਸ਼ਣ ਅਤੇ ਫਸਲ ਸਿਫਾਰਸ਼ਾਂ',
+
+  'disease.title': 'ਮੌਜੂਦਾ ਤਸਵੀਰਾਂ ਅੱਪਲੋਡ ਕਰੋ',
+  'disease.upload': 'ਤਸਵੀਰ ਅੱਪਲੋਡ ਕਰੋ',
+  'disease.guide': 'AI ਆਧਾਰਿਤ ਰੋਗ ਪਛਾਣ ਅਤੇ ਇਲਾਜ ਮਾਰਗਦਰਸ਼ਨ',
+  'disease.uploadSuccess': 'ਤਸਵੀਰ ਸਫਲਤਾਪੂਰਵਕ ਅੱਪਲੋਡ ਹੋਈ',
+  'disease.analyze': 'AI ਨਾਲ ਵਿਸ਼ਲੇਸ਼ਣ ਕਰੋ',
+
+  'disease.detectedIn': 'ਵਿੱਚ ਪਾਇਆ ਗਿਆ',
+  'disease.severity': 'ਤੀਬਰਤਾ:',
+  'disease.confident': 'ਵਿਸ਼ਵਾਸ ਪੱਧਰ',
+  'disease.observedSymptoms': 'ਦੇਖੇ ਗਏ ਲੱਛਣ',
+  'disease.preventiveTips': 'ਰੋਕਥਾਮ ਸੁਝਾਅ',
+  'disease.recommendedProducts': 'ਸਿਫਾਰਸ਼ ਕੀਤੇ ਉਤਪਾਦ',
+  'disease.nutrientRecommendations': 'ਪੋਸ਼ਕ ਸਿਫਾਰਸ਼ਾਂ',
+  'disease.pesticideRecommendations': 'ਕੀਟਨਾਸ਼ਕ ਸਿਫਾਰਸ਼ਾਂ',
+  'disease.expectedRecovery': 'ਅਪੇਖਿਤ ਸੁਧਾਰ',
+  'disease.treatmentReport': 'ਇਲਾਜ ਰਿਪੋਰਟ',
+  'disease.dosage': 'ਮਾਤਰਾ',
   'nav.home': 'ਹੋਮ',
   'nav.soilAnalysis': 'ਮਿੱਟੀ ਵਿਸ਼ਲੇਸ਼ਣ',
   'nav.diseaseDetection': 'ਬਿਮਾਰੀ ਪਛਾਣ',
@@ -2887,19 +3222,12 @@ pa: {
   'stats.supportAvailable': 'ਸਹਾਇਤਾ ਉਪਲਬਧ',
 
   // Soil Analysis Page
-  'soil.title': 'ਮਿੱਟੀ ਵਿਸ਼ਲੇਸ਼ਣ ਅਤੇ ਸਿਫਾਰਸ਼ਾਂ',
-  'soil.subtitle': 'AI-ਚਲਿਤ ਵਿਸ਼ਲੇਸ਼ਣ ਲਈ ਆਪਣੀ ਮਿੱਟੀ ਦੀ ਰਿਪੋਰਟ ਅੱਪਲੋਡ ਕਰੋ',
-  'soil.upload': 'ਮਿੱਟੀ ਰਿਪੋਰਟ ਅੱਪਲੋਡ ਕਰੋ',
-  'soil.analyze': 'AI ਨਾਲ ਵਿਸ਼ਲੇਸ਼ਣ ਕਰੋ',
-  'soil.recommendations': 'AI ਸਿਫਾਰਸ਼ਾਂ',
-  'soil.generateReport': 'ਰਿਪੋਰਟ ਬਣਾਓ',
-  'soil.noFile': 'ਕਿਰਪਾ ਕਰਕੇ ਪਹਿਲਾਂ ਮਿੱਟੀ ਦੀ ਰਿਪੋਰਟ ਅੱਪਲੋਡ ਕਰੋ',
-  'soil.analyzing': 'ਤੁਹਾਡੀ ਮਿੱਟੀ ਦੀ ਰਿਪੋਰਟ ਵਿਸ਼ਲੇਸ਼ਣ ਹੋ ਰਹੀ ਹੈ...',
+ 
 
   // Disease Detection Page
-  'disease.title': 'ਫ਼ਸਲ ਬਿਮਾਰੀ ਪਛਾਣ',
+  
   'disease.subtitle': 'ਤੁਰੰਤ AI ਨਿਦਾਨ ਲਈ ਬਿਮਾਰ ਫ਼ਸਲ ਦੀ ਤਸਵੀਰ ਅੱਪਲੋਡ ਕਰੋ',
-  'disease.upload': 'ਫ਼ਸਲ ਦੀ ਤਸਵੀਰ ਅੱਪਲੋਡ ਕਰੋ',
+  
   'disease.detect': 'ਬਿਮਾਰੀ ਪਛਾਣੋ',
   'disease.diagnosis': 'ਬਿਮਾਰੀ ਨਿਦਾਨ',
   'disease.treatment': 'ਇਲਾਜ ਦੀ ਸਿਫਾਰਸ਼',

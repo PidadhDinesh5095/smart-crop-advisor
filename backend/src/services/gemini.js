@@ -6,7 +6,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const apiKey = process.env.GEMINI_API_KEY;
-console.log("GEMINI_API_KEY loaded:", apiKey);
+console.log("GEMINI_API_KEY loaded:", !!apiKey);
 if (!apiKey) throw new Error('GEMINI_API_KEY not set');
 
 function ensureLang(lang) {
