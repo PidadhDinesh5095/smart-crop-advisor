@@ -25,7 +25,7 @@ The plan should include all details from crop selection to harvest, including:
 7. Safety and environmental tips
 8. Any other important advice for maximizing yield
 
-Respond only in JSON format and provide all information in the user-specified language: ${language}.
+Respond only in JSON format and provide all information, also budget information in the user-specified language: ${language} .
 Return the result in the following JSON structure:
 {
   "cropPlan": {

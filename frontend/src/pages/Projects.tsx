@@ -22,6 +22,7 @@ const Projects = () => {
           headers: { Authorization: `Bearer ${token || ""}` }
         });
         const data = await res.json();
+        console.log("Fetched projects:", data);
         setProjects(data.projects || []);
       } catch {
         setProjects([]);
@@ -38,14 +39,14 @@ const Projects = () => {
           .filter(([key]) => key !== "total")
           .map(([key, value]) => (
             <div key={key} className="flex justify-between">
-              <span className="capitalize">{t(key)}</span>
-            
+              <span className="capitalize text-black">{t(key)} : {String(value)}</span>
+              
             </div>
           ))}
       {budget && (
-        <div className="flex justify-between font-bold border-t pt-2 col-span-2">
-          <span>{t("Total")}</span>
-          <span>{budget.total}</span>
+        <div className="  flex justify-between font-bold border-t pt-2 col-span-2">
+          <span>{t("Total") } : {budget.total}</span>
+        
         </div>
       )}
     </div>

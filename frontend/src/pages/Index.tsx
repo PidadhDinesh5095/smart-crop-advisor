@@ -91,7 +91,7 @@ const Index = () => {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
+      <section className="relative h-[700px] py-20 lg:py-32 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={heroImage}

@@ -24,6 +24,41 @@ const SoilAnalysis = () => {
       setFileToSend(file);
     }
   };
+  const handleProjectCreation = async () => {
+    setIsCreatingProject(true);
+    const token = localStorage.getItem("token");
+    try {
+      const res = await fetch(`${url}/project/create`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token || ""}`,
+        },
+        body: JSON.stringify({
+          report: analysis
+        }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        toast({
+          title: t('project.success') || "Success",
+          
+          className: "bg-green-500 text-white",
+        });
+      } else {
+        toast({
+          variant: "destructive",
+          title: data.error || "Failed to create project"
+        });
+      }
+    } catch (err: any) {
+      toast({
+        variant: "destructive",
+        title: err.message || "Failed to create project"
+      });
+    }
+    setIsCreatingProject(false);
+  }
 
   const handleAnalyze = async () => {
     if (!fileToSend) return;
@@ -142,7 +177,7 @@ const SoilAnalysis = () => {
                 <div className="text-center py-8">
                   <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
                   <p className="text-sm font-medium">{t('soil.analyzing')}</p>
-                 
+
                 </div>
               ) : analysis && analysis.soilReport ? (
                 <>
@@ -251,41 +286,7 @@ const SoilAnalysis = () => {
                     <div>
                       <Button
                         className="mt-4"
-                        onClick={async () => {
-                          setIsCreatingProject(true);
-                          const token = localStorage.getItem("token");
-                          try {
-                            const res = await fetch(`${import.meta.env.BACKEND_URL}/project/create`, {
-                              method: "POST",
-                              headers: {
-                                "Content-Type": "application/json",
-                                Authorization: `Bearer ${token || ""}`,
-                              },
-                              body: JSON.stringify({
-                                report: analysis
-                              }),
-                            });
-                            const data = await res.json();
-                            if (res.ok) {
-                              toast({
-                                title: t("auth.signupSuccess") || "Signup successful!",
-                                description: "Signup successful",
-                                className: "bg-green-500 text-white",
-                              });
-                            } else {
-                              toast({
-                                variant: "destructive",
-                                title: data.error || "Failed to create project"
-                              });
-                            }
-                          } catch (err: any) {
-                            toast({
-                              variant: "destructive",
-                              title: err.message || "Failed to create project"
-                            });
-                          }
-                          setIsCreatingProject(false);
-                        }}
+                        onClick={ handleProjectCreation}
                         disabled={isCreatingProject}
                       >
                         {isCreatingProject ? (

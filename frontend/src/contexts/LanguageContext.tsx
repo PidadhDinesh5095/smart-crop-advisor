@@ -91,6 +91,15 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
 export const translations: Record<LanguageCode, Record<string, string>> = {
   en: {
     // Navigation
+    'fertilizers': 'Fertilizers',
+  'harvesting': 'Harvesting',
+  'irrigation': 'Irrigation',
+  'landPreparation': 'Land Preparation',
+  'pestControl': 'Pest Control',
+  'seeds': 'Seeds',
+  'total': 'Total',
+  'weather.fetchingWeatherData': 'Fetching weather data...',
+  'project.success': 'Project created successfully',
     
   'soil.title': 'Soil Analysis and Recommendations',
   'soil.subtitle': 'Upload your soil report for AI-powered analysis and recommendations',
@@ -410,48 +419,56 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
   },
   
   hi: {
-    
-  'soil.title': 'মাটির বিশ্লেষণ ও সুপারিশ',
-  'soil.subtitle': 'AI ভিত্তিক বিশ্লেষণ ও সুপারিশের জন্য আপনার মাটির রিপোর্ট আপলোড করুন',
-  'soil.upload': 'মাটির রিপোর্ট আপলোড করুন',
-  'soil.uploadedFile': 'আপলোড করা ফাইল',
-  'common.projectCreating': 'প্রকল্প তৈরি করা হচ্ছে...',
-  'soil.analyze': 'AI দিয়ে বিশ্লেষণ করুন',
-  'soil.soilType': 'মাটির ধরন',
-  'soil.recommendations': 'AI সুপারিশ',
-  'soil.createProject': 'প্রকল্প তৈরি করুন',
-  'soil.generateReport': 'রিপোর্ট তৈরি করুন',
-  'soil.noFile': 'দয়া করে প্রথমে মাটির রিপোর্ট আপলোড করুন',
-  'soil.analyzing': 'আপনার মাটির রিপোর্ট বিশ্লেষণ করা হচ্ছে...',
-  'soil.uploadPrompt': 'আপনার মাটির পরীক্ষার ফলাফল সম্বলিত PDF, ছবি বা ডকুমেন্ট আপলোড করুন',
-  'soil.reportSummary': 'মাটির রিপোর্ট সারাংশ',
-  'soil.PH': 'পিএইচ স্তর',
-  'soil.organicMatter': 'জৈব পদার্থ',
-  'soil.moisture': 'আর্দ্রতা',
-  'soil.nutrients': 'পুষ্টি উপাদান',
-  'soil.heavyMetals': 'ভারী ধাতু',
-  'soil.issues': 'সমস্যা',
-  'soil.suitableCrops': 'উপযুক্ত ফসল',
-  'soil.createproject': 'প্রকল্প তৈরি করুন',
-  'soil.aiAnalysis': 'AI ভিত্তিক মাটি বিশ্লেষণ ও ফসলের পরামর্শ',
+    'fertilizers': 'उर्वरक',
+  'harvesting': 'कटाई',
+  'irrigation': 'सिंचाई',
+  'landPreparation': 'भूमि तैयारी',
+  'pestControl': 'कीट नियंत्रण',
+  'seeds': 'बीज',
+  'total': 'कुल',
+  'weather.fetchingWeatherData': 'मौसम डेटा प्राप्त किया जा रहा है...',
+  'project.success': 'परियोजना सफलतापूर्वक बनाई गई',
+  'soil.title': 'मिट्टी विश्लेषण और सिफारिशें',
+  'soil.subtitle': 'AI संचालित विश्लेषण और सिफारिशों के लिए अपनी मिट्टी रिपोर्ट अपलोड करें',
+  'soil.upload': 'मिट्टी रिपोर्ट अपलोड करें',
+  'soil.uploadedFile': 'अपलोड किया गया फाइल',
+  'common.projectCreating': 'प्रकल्प तैरि करा हच्छे...',
+  'soil.analyze': 'AI से विश्लेषण करें',
+  'soil.soilType': 'मिट्टी का प्रकार',
+  'soil.recommendations': 'AI सिफारिशें',
+  'soil.createProject': 'प्रकल्प बनाएं',
+  'soil.generateReport': 'रिपोर्ट उत्पन्न करें',
+  'soil.noFile': 'कृपया पहले मिट्टी रिपोर्ट अपलोड करें',
+  'soil.analyzing': 'आपकी मिट्टी की रिपोर्ट विश्लेषण की जा रही है...',
+  'soil.uploadPrompt': 'आपकी मिट्टी के परीक्षण के परिणामों से भरा PDF, छवि या दस्तावेज़ अपलोड करें',
+  'soil.reportSummary': 'मिट्टी की रिपोर्ट सारांश',
+  'soil.PH': 'पीएच स्तर',
+  'soil.organicMatter': 'जैविक पदार्थ',
+  'soil.moisture': 'नमी',
+  'soil.nutrients': 'पोषक तत्व',
+  'soil.heavyMetals': 'भारी धातुएँ',
+  'soil.issues': 'समस्याएँ',
+  'soil.suitableCrops': 'उपयुक्त फसलें',
+  'soil.createproject': 'प्रकल्प बनाएं',
+  'soil.aiAnalysis': 'AI संचालित मिट्टी विश्लेषण और फसल सिफारिशें',
 
-  'disease.title': 'বিদ্যমান ছবি আপলোড করুন',
-  'disease.upload': 'ছবি আপলোড করুন',
-  'disease.guide': 'AI ভিত্তিক রোগ সনাক্তকরণ ও চিকিৎসা নির্দেশিকা',
-  'disease.uploadSuccess': 'ছবি সফলভাবে আপলোড হয়েছে',
-  'disease.analyze': 'AI দিয়ে বিশ্লেষণ করুন',
+  'disease.title': 'मौजूदा छवियाँ अपलोड करें',
+  'disease.upload': 'मौजूदा छवियाँ अपलोड करें',
+  'disease.guide': 'AI भित्तिक रोग सनाक्तकरण ओ चिकिৎसा निर्देशिका',
+  'disease.uploadSuccess': 'मौजूदा छवियाँ सफलतापूर्वक अपलोड की गईं',
+  'disease.analyze': 'AI से विश्लेषण करें',
 
-  'disease.detectedIn': 'এ সনাক্ত হয়েছে',
-  'disease.severity': 'তীব্রতা:',
-  'disease.confident': 'বিশ্বাসের মাত্রা',
-  'disease.observedSymptoms': 'পর্যবেক্ষিত লক্ষণ',
-  'disease.preventiveTips': 'প্রতিরোধমূলক পরামর্শ',
-  'disease.recommendedProducts': 'প্রস্তাবিত পণ্য',
-  'disease.nutrientRecommendations': 'পুষ্টি পরামর্শ',
-  'disease.pesticideRecommendations': 'কীটনাশক পরামর্শ',
-  'disease.expectedRecovery': 'প্রত্যাশিত পুনরুদ্ধার',
-  'disease.treatmentReport': 'চিকিৎসা রিপোর্ট',
-  'disease.dosage': 'মাত্রা',
+  'disease.detectedIn': 'में पता चला',
+  'disease.severity': 'तीव्रता:',
+  'disease.confident': 'विश्वास का मात्रा',
+  'disease.observedSymptoms': 'पर्यवेक्षित लक्षण',
+  'disease.preventiveTips': 'प्रतिरोधमूलक परामर्श',
+  'disease.recommendedProducts': 'प्रस्तावित पण्य',
+  'disease.nutrientRecommendations': 'पोषक तत्व सिफारिशें',
+  'disease.pesticideRecommendations': 'कीटनाशक सिफारिशें',
+  'disease.expectedRecovery': 'अपेक्षित सुधार',
+  'disease.treatmentReport': 'चिकित्सा रिपोर्ट',
+  'disease.dosage': 'खुराक',
     // Navigation
      'nav.home': 'होम',
   'nav.soilAnalysis': 'मिट्टी विश्लेषण',
@@ -718,6 +735,15 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
   
   bn: {
     // Navigation
+    'fertilizers': 'সার',
+  'harvesting': 'ফসল কাটা',
+  'irrigation': 'সেচ',
+  'landPreparation': 'জমি প্রস্তুতি',
+  'pestControl': 'পোকা নিয়ন্ত্রণ',
+  'seeds': 'বীজ',
+  'total': 'মোট',
+  'weather.fetchingWeatherData': 'আবহাওয়ার তথ্য আনা হচ্ছে...',
+  'project.success': 'প্রকল্প সফলভাবে তৈরি হয়েছে',
     'soil.title': 'মাটির বিশ্লেষণ ও সুপারিশ',
   'soil.subtitle': 'AI ভিত্তিক বিশ্লেষণ ও সুপারিশের জন্য আপনার মাটির রিপোর্ট আপলোড করুন',
   'soil.upload': 'মাটির রিপোর্ট আপলোড করুন',
@@ -1020,7 +1046,15 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
   
   te: {
     // Navigation
-    
+    'fertilizers': 'ఎరువులు',
+  'harvesting': 'పంట కోత',
+  'irrigation': 'పారుదల',
+  'landPreparation': 'భూమి సిద్ధం',
+  'pestControl': 'పురుగు నియంత్రణ',
+  'seeds': 'విత్తనాలు',
+  'total': 'మొత్తం',
+  'weather.fetchingWeatherData': 'వాతావరణ డేటాను పొందుతున్నాం...',
+  'project.success': 'ప్రాజెక్ట్ విజయవంతంగా సృష్టించబడింది',
   'soil.title': 'మట్టి విశ్లేషణ మరియు సిఫారసులు',
   'soil.subtitle': 'AI ఆధారిత విశ్లేషణ మరియు సిఫారసుల కోసం మీ మట్టి నివేదికను అప్లోడ్ చేయండి',
   'soil.upload': 'మట్టి నివేదిక అప్లోడ్ చేయండి',
@@ -1320,7 +1354,15 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
   
   mr: {
     // Navigation
-    
+     'fertilizers': 'खते',
+  'harvesting': 'कापणी',
+  'irrigation': 'सिंचन',
+  'landPreparation': 'जमीन तयारी',
+  'pestControl': 'कीटक नियंत्रण',
+  'seeds': 'बियाणे',
+  'total': 'एकूण',
+  'weather.fetchingWeatherData': 'हवामान डेटा मिळवला जात आहे...',
+  'project.success': 'प्रकल्प यशस्वीरित्या तयार झाला',
   'soil.title': 'माती विश्लेषण आणि शिफारसी',
   'soil.subtitle': 'AI आधारित विश्लेषण आणि शिफारसींसाठी आपली माती अहवाल अपलोड करा',
   'soil.upload': 'माती अहवाल अपलोड करा',
@@ -1619,7 +1661,15 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
   
   ta: {
     // Navigation
-    
+    'fertilizers': 'உரங்கள்',
+  'harvesting': 'அறுவடை',
+  'irrigation': 'நீர்ப்பாசனம்',
+  'landPreparation': 'நிலத் தயாரிப்பு',
+  'pestControl': 'பூச்சி கட்டுப்பாடு',
+  'seeds': 'விதைகள்',
+  'total': 'மொத்தம்',
+  'weather.fetchingWeatherData': 'வானிலை தகவல் பெறப்படுகிறது...',
+  'project.success': 'திட்டம் வெற்றிகரமாக உருவாக்கப்பட்டது',
   'soil.title': 'மண் பகுப்பாய்வு மற்றும் பரிந்துரைகள்',
   'soil.subtitle': 'AI அடிப்படையிலான பகுப்பாய்வு மற்றும் பரிந்துரைகளுக்கு உங்கள் மண் அறிக்கையை பதிவேற்றவும்',
   'soil.upload': 'மண் அறிக்கை பதிவேற்றம்',
@@ -1920,6 +1970,15 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
   },
   gu: {
   // Navigation
+  'fertilizers': 'ખાતર',
+  'harvesting': 'પાક કાપણી',
+  'irrigation': 'સિંચાઈ',
+  'landPreparation': 'જમીન તૈયારી',
+  'pestControl': 'કીટ નિયંત્રણ',
+  'seeds': 'બીજ',
+  'total': 'કુલ',
+  'weather.fetchingWeatherData': 'હવામાન ડેટા મેળવવામાં આવી રહ્યો છે...',
+  'project.success': 'પ્રોજેક્ટ સફળતાપૂર્વક બનાવાયો',
   
   'soil.title': 'માટી વિશ્લેષણ અને ભલામણો',
   'soil.subtitle': 'AI આધારિત વિશ્લેષણ અને ભલામણો માટે તમારી માટી રિપોર્ટ અપલોડ કરો',
@@ -2206,7 +2265,15 @@ export const translations: Record<LanguageCode, Record<string, string>> = {
 },
 kn: {
   // Navigation
-  
+  'fertilizers': 'ಗೊಬ್ಬರಗಳು',
+  'harvesting': 'ಕೊಯ್ಲು',
+  'irrigation': 'ನೀರಾವರಿ',
+  'landPreparation': 'ಭೂಮಿ ತಯಾರಿ',
+  'pestControl': 'ಕೀಟ ನಿಯಂತ್ರಣ',
+  'seeds': 'ಬೀಜಗಳು',
+  'total': 'ಒಟ್ಟು',
+  'weather.fetchingWeatherData': 'ಹವಾಮಾನ ಮಾಹಿತಿಯನ್ನು ಪಡೆಯಲಾಗುತ್ತಿದೆ...',
+  'project.success': 'ಯೋಜನೆ ಯಶಸ್ವಿಯಾಗಿ ರಚಿಸಲಾಗಿದೆ',
   'soil.title': 'ಮಣ್ಣು ವಿಶ್ಲೇಷಣೆ ಮತ್ತು ಶಿಫಾರಸುಗಳು',
   'soil.subtitle': 'AI ಆಧಾರಿತ ವಿಶ್ಲೇಷಣೆ ಮತ್ತು ಶಿಫಾರಸುಗಳಿಗೆ ನಿಮ್ಮ ಮಣ್ಣು ವರದಿಯನ್ನು ಅಪ್‌ಲೋಡ್ ಮಾಡಿ',
   'soil.upload': 'ಮಣ್ಣು ವರದಿ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ',
@@ -2507,7 +2574,15 @@ kn: {
 
 ml: {
   // Navigation\
-  
+  'fertilizers': 'ಗೊಬ್ಬರಗಳು',
+  'harvesting': 'ಕೊಯ್ಲು',
+  'irrigation': 'ನೀರಾವರಿ',
+  'landPreparation': 'ಭೂಮಿ ತಯಾರಿ',
+  'pestControl': 'ಕೀಟ ನಿಯಂತ್ರಣ',
+  'seeds': 'ಬೀಜಗಳು',
+  'total': 'ಒಟ್ಟು',
+  'weather.fetchingWeatherData': 'ಹವಾಮಾನ ಮಾಹಿತಿಯನ್ನು ಪಡೆಯಲಾಗುತ್ತಿದೆ...',
+  'project.success': 'ಯೋಜನೆ ಯಶಸ್ವಿಯಾಗಿ ರಚಿಸಲಾಗಿದೆ',
   'soil.title': 'മണ്ണ് വിശകലനവും ശുപാർശകളും',
   'soil.subtitle': 'AI അടിസ്ഥാനത്തിലുള്ള വിശകലനത്തിനും ശുപാർശകൾക്കുമായി നിങ്ങളുടെ മണ്ണ് റിപ്പോർട്ട് അപ്‌ലോഡ് ചെയ്യുക',
   'soil.upload': 'മണ്ണ് റിപ്പോർട്ട് അപ്‌ലോഡ് ചെയ്യുക',
@@ -2805,6 +2880,15 @@ ml: {
 
 or: {
   // Navigation
+  'fertilizers': 'ସାର',
+  'harvesting': 'କଟାଇ',
+  'irrigation': 'ସିଚାଇ',
+  'landPreparation': 'ଜମି ପ୍ରସ୍ତୁତି',
+  'pestControl': 'କୀଟ ନିୟନ୍ତ୍ରଣ',
+  'seeds': 'ବୀଜ',
+  'total': 'ମୋଟ',
+  'weather.fetchingWeatherData': 'ପାଗ ସୂଚନା ଆଣାଯାଉଛି...',
+  'project.success': 'ପ୍ରକଳ୍ପ ସଫଳତାର ସହ ସୃଷ୍ଟି ହେଲା',
   
   'soil.title': 'ମାଟି ବିଶ୍ଳେଷଣ ଓ ସୁପାରିଶ',
   'soil.subtitle': 'AI ଆଧାରିତ ବିଶ୍ଳେଷଣ ଓ ସୁପାରିଶ ପାଇଁ ଆପଣଙ୍କ ମାଟି ରିପୋର୍ଟ ଅପଲୋଡ୍ କରନ୍ତୁ',
@@ -3104,7 +3188,15 @@ or: {
 
 pa: {
   // Navigation
-  
+  'fertilizers': 'ਖਾਦ',
+  'harvesting': 'ਕਟਾਈ',
+  'irrigation': 'ਸਿੰਚਾਈ',
+  'landPreparation': 'ਜ਼ਮੀਨ ਤਿਆਰੀ',
+  'pestControl': 'ਕੀਟ ਨਿਯੰਤਰਣ',
+  'seeds': 'ਬੀਜ',
+  'total': 'ਕੁੱਲ',
+  'weather.fetchingWeatherData': 'ਮੌਸਮ ਡਾਟਾ ਲਿਆ ਜਾ ਰਿਹਾ ਹੈ...',
+  'project.success': 'ਪ੍ਰੋਜੈਕਟ ਸਫਲਤਾਪੂਰਵਕ ਬਣਾਇਆ ਗਿਆ',
   'soil.title': 'ਮਿੱਟੀ ਵਿਸ਼ਲੇਸ਼ਣ ਅਤੇ ਸਿਫਾਰਸ਼ਾਂ',
   'soil.subtitle': 'AI ਅਧਾਰਿਤ ਵਿਸ਼ਲੇਸ਼ਣ ਅਤੇ ਸਿਫਾਰਸ਼ਾਂ ਲਈ ਆਪਣੀ ਮਿੱਟੀ ਰਿਪੋਰਟ ਅੱਪਲੋਡ ਕਰੋ',
   'soil.upload': 'ਮਿੱਟੀ ਰਿਪੋਰਟ ਅੱਪਲੋਡ ਕਰੋ',
