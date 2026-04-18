@@ -132,11 +132,7 @@ const Login = () => {
               </Button>
             </form>
 
-            <div className="text-center">
-              <Link to="#" className="text-sm text-accent hover:underline">
-                {t("auth.forgotPassword")}
-              </Link>
-            </div>
+            
 
             <Separator />
 
