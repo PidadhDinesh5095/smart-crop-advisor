@@ -33,14 +33,7 @@ const Index = () => {
       icon: <Bug className="h-6 w-6 text-destructive" />,
       color: "primary" as const
     },
-    {
-      title: t('feature.fertilizerPlans.title'),
-      description: t('feature.fertilizerPlans.description'),
-      image: fertilizerImage,
-      href: "/fertilizer",
-      icon: <Beaker className="h-6 w-6 text-earth" />,
-      color: "earth" as const
-    },
+    
     {
       title: t('feature.weather.title'),
       description: t('feature.weather.description'),
